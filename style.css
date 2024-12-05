@@ -1,0 +1,99 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  ul, ol {
+    list-style: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /*a {
+    text-decoration: none;
+    color: inherit;
+  }*/
+  @font-face {
+    font-family: "roro";
+    src: url(/Media/Fonts/Rajdhani/Rajdhani-Bold.ttf);
+  }
+  /************ Header **************/
+  .headnav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .navliste{
+    display: flex;
+    justify-content: space-betwesen;
+    gap: 7rem;
+    
+  }
+  .navliste a{
+    text-transform: uppercase;
+  }
+  /************ hero **************/
+  h1{
+        font-family: "roro";
+        font-size: 1.8rem;
+        color: white;
+        text-align: center; 
+        padding: 1rem;
+        height: 150px;
+        align-content: center;
+        margin-bottom: 50px;
+ 
+  }
+
+  h1,.pheader{
+    width: 50%;
+    margin: auto;
+ 
+  }
+  .heropage1 p {
+    color: white;
+    text-align: center;
+    height: 100px;
+    align-content: center;
+  }
+  .heropage1{
+    background-image: url(/Media/Img/hero_home.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
+  }
+  .listeExp{
+    display: flex;
+    color: aliceblue;
+    text-align: center;
+  
+  }
+  .listeExp img{
+    height: auto;
+
+  }
+  .listeExp li{
+
+    border: solid 1px white;
+    width: 33%;
+    margin: 15px;
+    
+  }
+  .listeExp p,.listeExp h3 {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+  }
+  .lernMore{
+    display: block;
+  }
+  
+
+
+  
+  
+
