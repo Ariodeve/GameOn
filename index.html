@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="/script.js"></script>
     <title>GameOn</title>
 </head>
 <body>
-    <header class="headnav">
-        <img width="150" src="/Media/Img/LogoManettePrincipal-svg.svg" alt="">
-        <nav>
-            <ul class="navliste">
-                <li><a href="">à propos</a></li>
-                <li><a href="/experience.html">expérieces</a></li>
-                <li><a href="">réservation</a></li>
-                <li><a href="">contact</a></li>
+    <!-------------------- section header -------------------->
+    <header>
+        <img src="/Media/Img/LogoManettePlus-svg.svg" alt="Logo">
+        <div class="menu-toggle" id="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="navheader">
+            <ul>
+                <li><a href="#">À propos</a></li>
+                <li><a href="experience.html">Expériences</a></li>
+                <li><a href="#">Réservation</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
-        <a href="">Réservez</a>    
+        <a href="#" class="reservation-btn">Réservez</a>
     </header>
     <main>
+        <!-------------------- section hero -------------------->
         <section class="heropage1">
             <h1>Vivez l'expérience ultime du gaming</h1>
             <p class="pheader">
@@ -27,9 +35,9 @@
                 nos tournois compétitifs,
                 et nos événements spéciaux qui vous plongent dans des aventures inoubliables.
             </p>
-            <a href="">Réservez</a>
+            <a class="ctaHome" href="">Réservez</a>
             <ul class="listeExp">
-                <li>
+                <li class="exp1">
                     <img src="/Media/Img/heroexp1.jpg" alt="">
                     <h3>Exploration immersive</h3>
                     <p>
@@ -39,7 +47,7 @@
                     </p>
                     <a class="lernMore" href="">En savoir plus</a>
                 </li>
-                <li>
+                <li class="exp2">
                     <img src="/Media/Img/heroexp2.jpg" alt="">
                     <h3>Compétitions multijoueurs VR</h3>
                     <p>
@@ -48,7 +56,7 @@
                     </p>
                     <a class="lernMore" href="">En savoir plus</a>
                 </li>
-                <li>
+                <li class="exp3">
                     <img src="/Media/Img/heroexp3.jpg" alt="">
                     <h3>Simulations interactives</h3>
                     <p>
@@ -58,24 +66,26 @@
                 </li>
             </ul>
         </section>
-        <section>
+        <!-------------------- section about -------------------->
+        <section class="a_propos">
+            <img src="/Media/Img/img-section_apropos.jpg" alt="">
             <h2>Qui sommes nous ?</h2>
             <p>
                 GameOn est un centre de réalité virtuelle moderne qui propose des expériences inoubliables.
-                 Que vous soyez novice ou expert, nous avons quelque chose pour vous !
+                Que vous soyez novice ou expert, nous avons quelque chose pour vous !
             </p>
-            <img src="/Media/Img/img-section_apropos.jpg" alt="">
+            <a href="#" class="decouvrir-btn">Découvrir</a>
         </section>
-        <section>
-            <h2>Pourquoi choisir Gameon</h2>
-            <ul>
+        <!-------------------- section whyUs -------------------->
+        <section class="whyUs_sec">
+            <h2 class="whyUsh2">Pourquoi choisir Gameon</h2>
+            <ul class="WhyUs">
                 <li>
                     <img src="/Media/Icone/lunettes-de-realite-virtuelle.png" alt="">
                     <h3>Technologie de pointe</h3>
                     <p>
                         Nos équipements dernier cri garantissent une immersion totale dans des mondes virtuels captivants. 
                     </p>
-
                 </li>
                 <li>
                     <img src="/Media/Icone/lunettes-de-realite-virtuelle2.png" alt="">
@@ -83,7 +93,6 @@
                     <p>
                         Une expérience pensée pour tous, peu importe votre âge ou votre niveau d’expérience.
                     </p>
-
                 </li>
                 <li>
                     <img src="/Media/Icone/lunettes-de-realite-virtuelle2.png" alt="">
@@ -95,7 +104,8 @@
                 </li>
             </ul>
         </section>
-        <section>
+        <!-------------------- section Comments -------------------->
+        <section class="Comment_sec">
             <h2>Ce que disent nos visiteurs</h2>
             <ul>
                 <li>
@@ -111,7 +121,6 @@
                     <p>
                         Une expérience vraiment immersive et agréable. Je me suis complètement évadée dans le monde virtuel. À refaire !
                     </p>
-
                 </li>
                 <li>
                     <img src="/Media/Icone/profilHome.png" alt="">
@@ -122,31 +131,32 @@
                 </li>
             </ul>
         </section>
-        <section>
+        <!-------------------- section cta -------------------->
+        <section class="CtaSection">
             <h2>Prêt à plonger dans l'aventure ?</h2>
             <p>Réservez votre session VR dès maintenant et vivez une expérience inédite.</p>
-            <a href="">Réservez</a>
+            <a href="#" class="cta-button">Réservez</a>
         </section>
-
+        
     </main>
-    <footer>
-        <img src="/Media/Img/LogoManettePrincipal-svg.svg" alt="">
-        <a href="">Mention légales, politique de confidentialité</a>
-        <p>
-            GameOn VR Center <br>
-            123 Avenue du futur <br>
-            75001 Paris, France
-        </p>
-        <nav>
-            <ul>
-                <li><img src="/Media/Icone/instagram.png" alt=""></li>
-                <li><img src="/Media/Icone/facebook.png" alt=""></li>
-                <li><img src="/Media/Icone/tic-tac.png" alt=""></li>
-                <li><img src="/Media/Icone/youtube.png" alt=""></li>
-            </ul>
-        </nav>
-
-    </footer>
-    
+        <!-------------------- section footer -------------------->
+        <footer class="footer">
+            <img src="/Media/Img/LogoManettePrincipal-svg.svg" alt="Logo GameOn">
+            <a href="#" class="legal-link">Mentions légales, politique de confidentialité</a>
+            <p class="address">
+                GameOn VR Center <br>
+                123 Avenue du futur <br>
+                75001 Paris, France
+            </p>
+            <nav class="social-links">
+                <ul>
+                    <li><a href="#"><img src="/Media/Icone/instagram.png" alt="Instagram"></a></li>
+                    <li><a href="#"><img src="/Media/Icone/facebook.png" alt="Facebook"></a></li>
+                    <li><a href="#"><img src="/Media/Icone/tic-tac.png" alt="TikTok"></a></li>
+                    <li><a href="#"><img src="/Media/Icone/youtube.png" alt="YouTube"></a></li>
+                </ul>
+            </nav>
+        </footer>
+              
 </body>
 </html>
