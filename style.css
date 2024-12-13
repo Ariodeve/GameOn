@@ -153,8 +153,7 @@ main {
     padding: 0.5rem 1rem;
     border-radius: 15px;
     margin-bottom: 2rem;
-    transition: background-color 0.3s ease;
-    
+    transition: background-color 0.3s ease;    
 }
 
 .listeExp {
@@ -178,10 +177,7 @@ main {
     margin: auto;
 
 }
-.listeExp p{
-    
-    padding: 1rem;
-}
+
 .exp1{
     background: linear-gradient(to bottom,#FFFFFF,#8000FF);
 
@@ -204,17 +200,16 @@ main {
 .listeExp h3 {
     font-size: 1.2rem;
     font-family: "Rajdhani";
-
-    
-
 }
 
 .listeExp p {
+
     
     font-size: 0.9rem;
     margin-bottom: 1rem;
     margin-left:2.5rem;
     margin-right:2.5rem;
+    margin-top: 0;
 }
 
 .listeExp .lernMore {
@@ -227,8 +222,10 @@ main {
     transition: color 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 15px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5em;
+    margin-top: 0.5em;
     border: solid 1px #FFFFFF;
+    
     
 }
 
@@ -283,12 +280,27 @@ main {
     flex-direction: column;
     background-color: #000000;
     color: #FFFFFF;
+    border-top: #FFFFFF solid 1px;
+    border-bottom:#FFFFFF solid 1px;
+
 }
 
 .a_propos p {
     max-width: 70%;
     margin: auto;  
-    padding-bottom: 2em;   
+    padding-bottom: 2em; 
+    line-height: 1.4em;
+
+    
+      
+}
+.a_propos img {
+    border-radius: 5px;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 2em;
+    
+    
 }
 .decouvrir-btn{
     width: 100px;
@@ -300,6 +312,8 @@ main {
     border-radius: 15px;
     transition: background-color 0.3s ease;
     margin: auto;
+    margin-bottom: 2em;
+
 }
 
 /* Responsivité - Tablettes et plus */
@@ -339,13 +353,14 @@ main {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    margin-bottom: 5em;
 }
 .WhyUs li{
     max-width: 80%;
     margin: auto;
     border: solid 1px #000000;
     border-radius: 10px;
-    height: 288px; 
+    height: 300px; 
     background: linear-gradient(to right,#00BFFF,#8000FF);  
     color: #FFFFFF;
 }
@@ -362,6 +377,12 @@ main {
 }
 
 /************ section comments **************/
+.Comment_sec {
+    background: linear-gradient(to bottom, #00BFFF, #000000);
+}
+.Comment_sec h2 {
+    padding: 1rem;
+}
 .Comment_sec ul{
     display: flex;
     flex-direction: column;
@@ -373,7 +394,7 @@ main {
     border: solid 1px #000000;
     border-radius: 10px;
     height: 288px; 
-    /*background: linear-gradient(to right,#00BFFF,#8000FF);  */
+    background: linear-gradient(to bottom,#00BFFF,#FFFFFF);
     color: #000000;
 }
 .Comment_sec ul li p{
@@ -389,9 +410,12 @@ main {
     padding: 1.5rem;
     text-align: center; 
     background-color: #000000; 
-    color: #ffffff; 
-    
-    
+    color: #ffffff;   
+     
+}
+.CtaSection h2, .CtaSection p{
+    max-width: 80%;
+    margin: auto;
 }
 
 .CtaSection h2 {
@@ -406,18 +430,19 @@ main {
 }
 
 .CtaSection .cta-button {
-    display: inline-block; /* Pour que le lien ressemble à un bouton */
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
+    display: inline-block;
     background-color: #00BFFF;
     color: #000000;
     text-decoration: none;
+    padding: 0.5rem 1rem;
     border-radius: 15px;
+    margin-bottom: 2rem;
     transition: background-color 0.3s ease;
 }
 
+
 .CtaSection .cta-button:hover {
-    background-color: #ff4500; /* Change la couleur au survol */
+     /* Change la couleur au survol */
 }
 
 /* Responsivité - Tablettes et plus */
@@ -465,42 +490,46 @@ main {
 
 /************ section footer **************/
 /* Style général pour le footer */
-.footer {
+footer p{
+    max-width: 50%;
+    margin: auto;
+    margin-top: 2em;
+}
+footer {
     background-color: #00BFFF; /* Fond sombre */
-    color: #ffffff; /* Texte blanc */
+    color: #000000; /* Texte blanc */
     text-align: center; /* Centre tous les éléments */
     padding: 1.5rem; /* Ajoute un espace intérieur */
     border-top: 2px solid #ffffff; /* Ligne décorative en haut du footer */
 }
 
-.footer img {
+footer img {
     max-width: 150px; /* Taille maximale pour le logo */
-    margin-bottom: 1rem;
 }
 
 /* Lien des mentions légales */
-.footer .legal-link {
+footer .legal-link {
     display: block; /* Le lien occupe une ligne entière */
     margin-bottom: 1rem;
     font-size: 0.9rem; /* Taille de texte légèrement réduite */
-    color: #ff6200; /* Couleur vive */
+    color: #000000; /* Couleur vive */
     text-decoration: none;
     transition: color 0.3s ease; /* Animation fluide au survol */
 }
 
-.footer .legal-link:hover {
-    color: #ff4500; /* Couleur différente au survol */
+footer .legal-link:hover {
+    
 }
 
 /* Adresse */
-.footer .address {
+footer .address {
     font-size: 0.9rem;
     line-height: 1.6; /* Améliore la lisibilité */
     margin-bottom: 1.5rem;
 }
 
 /* Liens sociaux */
-.footer .social-links ul {
+footer .social-links ul {
     list-style: none; /* Supprime les puces des listes */
     padding: 0;
     margin: 0;
@@ -509,54 +538,54 @@ main {
     gap: 1rem; /* Ajoute un espace entre les icônes */
 }
 
-.footer .social-links li img {
+footer .social-links li img {
     width: 32px; /* Taille des icônes */
     height: 32px;
     transition: transform 0.3s ease; /* Animation fluide au survol */
 }
 
-.footer .social-links li img:hover {
+footer .social-links li img:hover {
     transform: scale(1.2); /* Agrandit l'icône au survol */
 }
 
 /* Responsivité - Tablettes et plus */
 @media (min-width: 768px) {
-    .footer {
-        text-align: left; /* Texte aligné à gauche */
+    footer {
+        
         padding: 2rem 3rem; /* Espaces plus grands */
     }
 
-    .footer img {
+    footer img {
         margin-bottom: 0.5rem;
     }
 
-    .footer .address {
+    footer .address {
         font-size: 1rem; /* Texte légèrement plus grand */
     }
 
-    .footer .social-links ul {
-        justify-content: flex-start; /* Alignement à gauche */
+    footer .social-links ul {
+        
     }
 }
 
 /* Responsivité - Ordinateurs */
 @media (min-width: 1024px) {
-    .footer {
+    footer {
         display: flex; /* Organisation en ligne */
         justify-content: space-between; /* Espace entre les blocs */
         align-items: center; /* Aligne verticalement les éléments */
     }
 
-    .footer img {
+    footer img {
         margin-bottom: 0; /* Supprime l'espace supplémentaire */
     }
 
-    .footer .address {
+    footer .address {
         margin-bottom: 0;
         font-size: 1.1rem;
     }
 
-    .footer .social-links ul {
+    footer .social-links ul {
         gap: 1.5rem; /* Espace plus grand entre les icônes */
     }
 }
