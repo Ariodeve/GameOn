@@ -14,9 +14,19 @@ body, ul, li, a {
   }
   
   @font-face {
+    font-family: "Roboto_Regular";
+    src: url("/Media/Fonts/Roboto/Roboto-Regular.woff2") format("woff2"),
+         url("/Media/Fonts/Roboto/Roboto-Regular.woff") format("woff"),
+         url("/Media/Fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
     font-family: "Rajdhani";
-    src: url(/Media/Fonts/Rajdhani/Rajdhani-Bold.ttf);
-  }
+    src: url("/Media/Fonts/Rajdhani/Rajdhani-Bold.woff2") format("woff2"),
+         url("/Media/Fonts/Rajdhani/Rajdhani-Bold.woff") format("woff"),
+         url("/Media/Fonts/Rajdhani/Rajdhani-Bold.ttf") format("truetype");
+}
+
   
   /************ Header **************/
   header img {
