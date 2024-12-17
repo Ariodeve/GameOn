@@ -135,7 +135,7 @@ a.reservation-btn {
 .menu-toggle div {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: var(--white-color);
     margin: 3px 0;
 }
 
@@ -155,7 +155,7 @@ a.reservation-btn {
   /************ Section hero **************/
 
 .herosec {
-    background: url('/Media/Img/hero_home.jpg') no-repeat center center/cover; /* Arrière-plan */
+    background: url('/Media/Img/hero_home.jpg') no-repeat center center/cover; 
     color: var(--white-color);
     padding: 2rem 1rem;
     min-height: 100vh;
@@ -179,31 +179,30 @@ a.reservation-btn {
     margin: 0;
     display: grid;
     gap: 1em;
+    
+    
 }
 
 .listeExp li {
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
     border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 10px;  
     overflow: hidden;
     text-align: center;
-    margin: 1.3rem;
-    display: flex;
-    flex-direction: column;
     max-width: 90%;
     margin: auto;
 }
 
 .exp1{
-    background: linear-gradient(to bottom,#FFFFFF,#8000FF);
+    background: linear-gradient(to bottom,var(--white-color),var(--secondary-color));
 
 }
 .exp2{
-    background: linear-gradient(to bottom,#00BFFF,#000000);
+    background: linear-gradient(to bottom,var(--primary-color),var(--black-color));
 }
 .exp3{
-    background: linear-gradient(to bottom,#8000FF,#00BFFF);
+    background: linear-gradient(to bottom,var(--secondary-color),var(--primary-color));
 }
 
 .listeExp img {
@@ -275,7 +274,7 @@ a.reservation-btn {
 
 /************ section comments **************/
 .Comment_sec {
-    background: linear-gradient(to bottom, #00BFFF, #000000);
+    background: linear-gradient(to bottom, var(--primary-color), var(--black-color));
 }
 
 .Comment_sec li{
@@ -399,14 +398,20 @@ footer .social-links li img:hover {
         .listeExp li{
             max-width: 80%;
         }
+        
     }
     .listeExp a{
         font-size: 1.3rem;
         padding: 0.8em;
         width: 110px
     }
+    .Comment_sec ul,.WhyUs_ul{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1400px;
+        margin: auto;   
+    }
 
-    
     footer {
         
         padding: 2rem 3rem;
@@ -443,62 +448,173 @@ footer .social-links li img:hover {
     h3{
         font-size: 2.2rem;
     }
-    h4{
-        font-size: 2rem;
-    }
-
-    p{
-        font-size: 1.8rem;
-        max-width: 65%;
+    .herosec p{
+        max-width: 40%;
         margin: auto;
-      }
+
+    }
+    
+    .a_propos{
+        display: flex;
+        padding: 0;
+    }
+    .a_propos img{
+        display: block;
+        width: 50%;
+        order: 1;
+        margin: 0;
+    }
+    .a_propos p{
+        max-width: 50%;
+        margin: auto;
+        
+    }
+    .a_propos div{
+        align-self: center;
+    }
 
     .listeExp {
         grid-template-columns: repeat(3, 1fr);
-        
+        max-width: 1400px;
+        margin: auto;
+
+          
     }
-    .WhyUs_ul{
+
+    .listeExp p{
+        max-width: 80%;
+    }
+    .Comment_sec ul,.WhyUs_ul{
         display: flex;
+        flex-wrap: wrap;
         max-width: 1400px;
         margin: auto;   
     }
-    .WhyUs_ul li{
-        height: auto;
-    
+    .Comment_sec li{
+        padding: 1em;
+        width: 280px;
+        height: 280px;
     }
-    .listeExp li{
-        
+    .Comment_sec p {
+        font-size: 1.2rem;
     }
+    h4{
+        margin-bottom: 1em;
+    }
+   
     .CtaSection {
         padding: 3rem;
     }
 
-    .CtaSection p {
-        font-size: 1.3rem;
-        width: 60%; /* Réduit encore la largeur pour une meilleure lisibilité */
-    }
-
-    .CtaSection .cta-button {
-        font-size: 1.2rem;
-        padding: 1.2rem 2.5rem; /* Bouton encore plus grand */
-    }
     footer {
-        display: flex; /* Organisation en ligne */
-        justify-content: space-between; /* Espace entre les blocs */
-        align-items: center; /* Aligne verticalement les éléments */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .footeer{
+        order: 2;
+        margin-left: 15em;
     }
 
     footer img {
-        margin-bottom: 0; /* Supprime l'espace supplémentaire */
+        width: 200px;
     }
 
-    footer .address {
-        margin-bottom: 0;
-        font-size: 1.1rem;
+    footer p { 
+        font-size: 1.4rem;
+    }
+    .adress{
+        padding: 1em;     
+    }
+    .mention{
+        margin-left: 25em;
+        width: 50%;
     }
 
     footer .social-links ul {
-        gap: 1.5rem; /* Espace plus grand entre les icônes */
+        gap: 1.5rem;
     }
     
+}
+/*********************** Page Expériences ************************/
+/* Section hero */
+.heroPage2{
+    background: url('/Media/Img/heroPage2.jpg') no-repeat center center/cover; 
+    padding: 2rem 1rem;
+    border-bottom: var(--white-color) solid 1px;
+}
+.heroPage2 h1{
+    margin: 2em auto 0.5em;
+    max-width: 80%;
+}
+.heroPage2 p{
+    color: var(--white-color);
+}
+/* Section expériences */
+.experience-list{
+    background: radial-gradient(circle, var(--primary-color) 0%, var(--black-color) 59%);
+}
+.experience-list h3{
+    color: var(--black-color);
+}
+
+.div1{
+    
+    
+    background-color: var(--white-color);
+    border-radius: 80px;
+    margin: 0em auto 2.5em; 
+    width: 80%;
+    overflow: hidden;
+    
+}
+.div1 img{
+    max-height: 250px;
+    object-fit: cover;
+    width: 100%;
+    display: block;      
+}
+/* Section FAQ*/
+.faq h2{
+    color: var(--black-color);
+}
+.faq li{
+    font-size: 1.6rem;
+    border: 1px solid var(--black-color);
+    text-align: start;
+    padding: 1.6em;
+    max-width: 80%;
+    margin: 2em auto;
+
+}
+
+
+
+/* Tablette (>= 768px) */
+@media (min-width: 768px) {
+    
+    .div1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .div1 div {
+        flex: 1 1 calc(50%); /* Les deux enfants prennent chacun 50% */
+    }
+
+    .div1 img {
+        object-fit: cover;
+        width: 100%; /* Assure que l'image reste dans son conteneur */
+        height: auto; /* Maintient le ratio hauteur/largeur */
+    }
+    .faq li{
+        max-width: 60%;
+    }
+}
+/* Desktop (>= 1024px) */
+@media (min-width: 1024px) {
+
+   
 }
