@@ -23,17 +23,18 @@ html {
 
 @font-face {
     font-family: "Roboto";
-    src: url("/Media/Fonts/Roboto/Roboto-Regular.woff2") format("woff2"),
-         url("/Media/Fonts/Roboto/Roboto-Regular.woff") format("woff"),
-         url("/Media/Fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+    src: url("/assets/Fonts/Roboto/Roboto-Regular.woff2") format("woff2"),
+         url("/assets/Fonts/Roboto/Roboto-Regular.woff") format("woff"),
+         url("/assets/Fonts/Roboto/Roboto-Regular.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Rajdhani";
-    src: url("/Media/Fonts/Rajdhani/Rajdhani-Bold.woff2") format("woff2"),
-         url("/Media/Fonts/Rajdhani/Rajdhani-Bold.woff") format("woff"),
-         url("/Media/Fonts/Rajdhani/Rajdhani-Bold.ttf") format("truetype");
+    src: url("/assets/Fonts/Rajdhani/Rajdhani-Bold.woff2") format("woff2"),
+         url("/assets/Fonts/Rajdhani/Rajdhani-Bold.woff") format("woff"),
+         url("/assets/Fonts/Rajdhani/Rajdhani-Bold.ttf") format("truetype");
 }
+
 /* Styles globaux */
 
 body {
@@ -83,6 +84,7 @@ h1,h2,h3,h4,a{
   }
 
   /************ Header **************/
+
   header img {
     width: 150px;
   }
@@ -96,6 +98,7 @@ h1,h2,h3,h4,a{
     color: var(--white-color);
     border-bottom: var(--white-color) solid 1px;   
 }
+
 .navheader {
     display: none;
 }
@@ -106,6 +109,7 @@ h1,h2,h3,h4,a{
     font-family: "Rajdhani"; 
     font-size: 1.3rem;  
 }
+
 .navheader ul li a:hover{
   color: var(--black-color);
 }
@@ -121,8 +125,7 @@ a.reservation-btn {
     display: none;
     width: 100px;
     text-align: center;
-    margin: 1.5em;
-       
+    margin: 1.5em;     
 }
 
 .menu-toggle {
@@ -141,7 +144,7 @@ a.reservation-btn {
 
 /* Menu déroulant */
 
-.menu-open .navheader {
+/*.menu-open .navheader {
   display: block;
   position: absolute;
   top: 60px;
@@ -150,12 +153,12 @@ a.reservation-btn {
   border-radius: 5px;
   padding: 10px;
   z-index: 1000;
-}
+}*/
 
   /************ Section hero **************/
 
 .herosec {
-    background: url('/Media/Img/hero_home.jpg') no-repeat center center/cover; 
+    background: url('/assets/Img/hero_home.jpg') no-repeat center center/cover; 
     color: var(--white-color);
     padding: 2rem 1rem;
     min-height: 100vh;
@@ -178,9 +181,7 @@ a.reservation-btn {
     padding: 0;
     margin: 0;
     display: grid;
-    gap: 1em;
-    
-    
+    gap: 1em;   
 }
 
 .listeExp li {
@@ -226,6 +227,7 @@ a.reservation-btn {
 }
 
 /* Section à-propos*/
+
 .a_propos {
     background-color: var(--black-color);
     color: var(--white-color);
@@ -273,6 +275,7 @@ a.reservation-btn {
 }
 
 /************ section comments **************/
+
 .Comment_sec {
     background: linear-gradient(to bottom, var(--primary-color), var(--black-color));
 }
@@ -291,7 +294,9 @@ a.reservation-btn {
     width: 80px;
     padding-top: 20px;
 }
+
 /************ section Cta **************/
+
 .CtaSection {
     text-align: center; 
     background-color: var(--black-color); 
@@ -313,17 +318,21 @@ footer img {
 }
 
 /* Lien des mentions légales */
+
 footer .legal-link {
     padding: 1em;
     color: var(--black-color);
-    transition: color 0.3s ease; /* Animation fluide au survol */
+    transition: color 0.3s ease;
 }
+
 /* Adresse */
+
 footer .address {
     padding: 1em;
 }
 
 /* Liens sociaux */
+
 footer .social-links ul {
     display: flex;
     justify-content: center;
@@ -339,7 +348,9 @@ footer .social-links li img {
 footer .social-links li img:hover {
     transform: scale(1.2);
 }
+
 /* Responsivité - Tablettes et plus */
+
 @media (min-width: 768px) {
     header img {
         width: 180px;
@@ -393,18 +404,20 @@ footer .social-links li img:hover {
         font-size: 1.6rem;
         padding: 0.5em;
     }
+
     .listeExp {
         grid-template-columns: repeat(2, 1fr);
         .listeExp li{
             max-width: 80%;
-        }
-        
+        }   
     }
+
     .listeExp a{
         font-size: 1.3rem;
         padding: 0.8em;
         width: 110px
     }
+
     .Comment_sec ul,.WhyUs_ul{
         display: flex;
         flex-wrap: wrap;
@@ -413,7 +426,6 @@ footer .social-links li img:hover {
     }
 
     footer {
-        
         padding: 2rem 3rem;
     }
 
@@ -427,6 +439,7 @@ footer .social-links li img:hover {
 }
 
 /* Responsivité - Ordinateurs */
+
 @media (min-width: 1024px) {
     
     h1 {
@@ -451,24 +464,26 @@ footer .social-links li img:hover {
     .herosec p{
         max-width: 40%;
         margin: auto;
-
     }
     
     .a_propos{
         display: flex;
         padding: 0;
     }
+
     .a_propos img{
         display: block;
         width: 50%;
         order: 1;
         margin: 0;
     }
+
     .a_propos p{
         max-width: 50%;
         margin: auto;
         
     }
+
     .a_propos div{
         align-self: center;
     }
@@ -476,28 +491,30 @@ footer .social-links li img:hover {
     .listeExp {
         grid-template-columns: repeat(3, 1fr);
         max-width: 1400px;
-        margin: auto;
-
-          
+        margin: auto;   
     }
 
     .listeExp p{
         max-width: 80%;
     }
+
     .Comment_sec ul,.WhyUs_ul{
         display: flex;
         flex-wrap: wrap;
         max-width: 1400px;
         margin: auto;   
     }
+
     .Comment_sec li{
         padding: 1em;
         width: 280px;
         height: 280px;
     }
+
     .Comment_sec p {
         font-size: 1.2rem;
     }
+
     h4{
         margin-bottom: 1em;
     }
@@ -512,6 +529,7 @@ footer .social-links li img:hover {
         align-items: center;
 
     }
+
     .footeer{
         order: 2;
         margin-left: 15em;
@@ -524,9 +542,11 @@ footer .social-links li img:hover {
     footer p { 
         font-size: 1.4rem;
     }
+
     .adress{
         padding: 1em;     
     }
+
     .mention{
         margin-left: 25em;
         width: 50%;
@@ -534,13 +554,15 @@ footer .social-links li img:hover {
 
     footer .social-links ul {
         gap: 1.5rem;
-    }
-    
+    }   
 }
+
 /*********************** Page Expériences ************************/
+
 /* Section hero */
+
 .heroPage2{
-    background: url('/Media/Img/heroPage2.jpg') no-repeat center center/cover; 
+    background: url('/assets/Img/heroPage2.jpg') no-repeat center center/cover; 
     padding: 2rem 1rem;
     border-bottom: var(--white-color) solid 1px;
 }
@@ -551,7 +573,9 @@ footer .social-links li img:hover {
 .heroPage2 p{
     color: var(--white-color);
 }
+
 /* Section expériences */
+
 .experience-list{
     background: radial-gradient(circle, var(--primary-color) 0%, var(--black-color) 59%);
 }
@@ -559,26 +583,27 @@ footer .social-links li img:hover {
     color: var(--black-color);
 }
 
-.div1{
-    
-    
+.div1{ 
     background-color: var(--white-color);
     border-radius: 80px;
     margin: 0em auto 2.5em; 
     width: 80%;
-    overflow: hidden;
-    
+    overflow: hidden;   
 }
+
 .div1 img{
     max-height: 250px;
     object-fit: cover;
     width: 100%;
     display: block;      
 }
+
 /* Section FAQ*/
+
 .faq h2{
     color: var(--black-color);
 }
+
 .faq li{
     font-size: 1.6rem;
     border: 1px solid var(--black-color);
@@ -586,12 +611,10 @@ footer .social-links li img:hover {
     padding: 1.6em;
     max-width: 80%;
     margin: 2em auto;
-
 }
 
-
-
 /* Tablette (>= 768px) */
+
 @media (min-width: 768px) {
     
     .div1 {
@@ -609,12 +632,8 @@ footer .social-links li img:hover {
         width: 100%; /* Assure que l'image reste dans son conteneur */
         height: auto; /* Maintient le ratio hauteur/largeur */
     }
+
     .faq li{
         max-width: 60%;
     }
-}
-/* Desktop (>= 1024px) */
-@media (min-width: 1024px) {
-
-   
 }
