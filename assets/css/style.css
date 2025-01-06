@@ -5,7 +5,7 @@
     --black-color: #000000;    
 }
 
-/****** Reset CSS ******/
+/********** Reset CSS *********/
 
 body, ul, li, a {
     margin: 0;
@@ -19,7 +19,7 @@ html {
     font-size: 62.5%;
 }
 
-/****** Fonts ******/
+/*********** Fonts ***********/
 
 @font-face {
     font-family: "Roboto";
@@ -35,7 +35,7 @@ html {
          url("/assets/Fonts/Rajdhani/Rajdhani-Bold.ttf") format("truetype");
 }
 
-/* Styles globaux */
+/********* Styles globaux ********/
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -57,27 +57,27 @@ h1,h2,h3,h4,a{
     font-family: "Rajdhani";
   }
 
-  h1{
+h1{
     color: var(--primary-color);
     font-size: 2.6rem; 
   }
 
-  h2{
+h2{
     color: var(--white-color);
     font-size: 2.3rem;
     margin: 0;
     padding: 1em;
   }
-  h3 {
+h3 {
     color: var(--white-color);
     font-size: 1.8rem;
   }
 
-  h4{
+h4{
     font-size: 1.6rem;
   }
 
-  p{
+p{
     font-size: 1.3rem;
     max-width: 69%;
     margin: auto;
@@ -85,11 +85,11 @@ h1,h2,h3,h4,a{
 
   /************ Header **************/
 
-  header img {
+header img {
     width: 150px;
   }
 
-  header {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -142,19 +142,6 @@ a.reservation-btn {
     margin: 3px 0;
 }
 
-/* Menu déroulant */
-
-/*.menu-open .navheader {
-  display: block;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: #333;
-  border-radius: 5px;
-  padding: 10px;
-  z-index: 1000;
-}*/
-
   /************ Section hero **************/
 
 .herosec {
@@ -201,7 +188,6 @@ a.reservation-btn {
 
 .exp1{
     background: linear-gradient(to bottom,var(--white-color),var(--secondary-color));
-
 }
 .exp2{
     background: linear-gradient(to bottom,var(--primary-color),var(--black-color));
@@ -230,7 +216,7 @@ a.reservation-btn {
     border: solid 1px var(--white-color);   
 }
 
-/* Section à-propos*/
+/********** Section à-propos*********/
 
 .a_propos {
     background-color: var(--black-color);
@@ -316,7 +302,6 @@ footer {
     padding: 1.5em;
     border-top: 1px solid var(--white-color);
 }
-
 
 footer img {
     max-width: 150px;
