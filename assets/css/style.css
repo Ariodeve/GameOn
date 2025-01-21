@@ -604,7 +604,7 @@ footer .social-links li img:hover {
 /* Section hero */
 
 .heroPage2{
-    background: url('/GameOn/assets/Img/heroPage2.jpg') no-repeat center center/cover; 
+    background: url('/gameon/assets/Img/heroPage2.jpg') no-repeat center center/cover; 
     padding: 2rem 1rem;
     border-bottom: var(--white-color) solid 1px;
 }
