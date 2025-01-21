@@ -23,16 +23,16 @@ html {
 
 @font-face {
     font-family: "Roboto";
-    src: url("assets/Fonts/Roboto/Roboto-Regular.woff2") format("woff2"),
-         url("assets/Fonts/Roboto/Roboto-Regular.woff") format("woff"),
-         url("assets/Fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+    src: url("/assets/Fonts/Roboto/Roboto-Regular.woff2") format("woff2"),
+         url("/assets/Fonts/Roboto/Roboto-Regular.woff") format("woff"),
+         url("/assets/Fonts/Roboto/Roboto-Regular.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Rajdhani";
-    src: url("assets/Fonts/Rajdhani/Rajdhani-Bold.woff2") format("woff2"),
-         url("assets/Fonts/Rajdhani/Rajdhani-Bold.woff") format("woff"),
-         url("assets/Fonts/Rajdhani/Rajdhani-Bold.ttf") format("truetype");
+    src: url("/assets/Fonts/Rajdhani/Rajdhani-Bold.woff2") format("woff2"),
+         url("/assets/Fonts/Rajdhani/Rajdhani-Bold.woff") format("woff"),
+         url("/assets/Fonts/Rajdhani/Rajdhani-Bold.ttf") format("truetype");
 }
 
 /********* Styles globaux ********/
@@ -160,7 +160,7 @@ a.reservation-btn {
   /************ Section hero **************/
 
 .herosec {
-    background: url('assets/Img/hero_home.jpg') no-repeat center center/cover; 
+    background: url('/assets/Img/hero_home.jpg') no-repeat center center/cover; 
     color: var(--white-color);
     padding: 2rem 1rem;
     min-height: 100vh;
@@ -604,7 +604,7 @@ footer .social-links li img:hover {
 /* Section hero */
 
 .heroPage2{
-    background: url('assets/Img/heroPage2.jpg') no-repeat center center/cover; 
+    background: url('/assets/Img/heroPage2.jpg') no-repeat center center/cover; 
     padding: 2rem 1rem;
     border-bottom: var(--white-color) solid 1px;
 }
