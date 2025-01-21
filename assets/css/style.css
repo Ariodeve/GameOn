@@ -84,6 +84,35 @@ p{
   }
 
   /************ Header **************/
+  /* Menu burger */
+.menu-toggle {
+    margin-left: 5em;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1100; /* Priorité au-dessus du menu */
+}
+
+.menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navigation (menu) */
+.navheader {
+    display: none;
+    position: fixed; /* Pour couvrir toute la page */
+    top: 0;
+    left: 0;
+    width: 100%; /* Prend toute la largeur */
+    height: 100%; /* Prend toute la hauteur */
+    background-color: rgba(0, 0, 0, 0.95); /* Fond semi-transparent */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Juste sous le bouton */
+}
 
 header img {
     width: 150px;
@@ -126,20 +155,6 @@ a.reservation-btn {
     width: 100px;
     text-align: center;
     margin: 1.5em;     
-}
-
-.menu-toggle {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    margin-right: 30px;
-}
-
-.menu-toggle div {
-    width: 25px;
-    height: 3px;
-    background-color: var(--white-color);
-    margin: 3px 0;
 }
 
   /************ Section hero **************/
@@ -344,7 +359,32 @@ footer .social-links li img:hover {
 /* Responsivité - Tablettes et plus */
 
 @media (min-width: 768px) {
+   
+    /* menu burge r*/
+    .navheader {
+        display: flex; 
+        position: static; /* Supprime l'effet de plein écran */
+        width: auto; 
+        height: auto; 
+        background-color: transparent; /* Supprime l'arrière-plan du menu */
+        padding: 0;
+        box-shadow: none;
+    }
 
+    .navheader ul {
+        flex-direction: row;
+        gap: 30px; 
+        justify-content: flex-end; 
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    header.menu-open .navheader {
+        display: flex; 
+    }
+    
     header img {
         width: 180px;
       }
@@ -432,6 +472,19 @@ footer .social-links li img:hover {
     footer img {
         max-width: 180px;
     }
+    /*Contact*/
+    .adresseContact{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+      }
+    .adresseContact div{
+        flex: 1;
+    }
+    .contact-info p{
+        text-align: left;
+      }
 }
 
 /* Responsivité - Ordinateurs */
@@ -626,3 +679,143 @@ footer .social-links li img:hover {
         max-width: 60%;
     }
 }
+
+/*test*/
+
+/* Header de base */
+
+header img {
+    width: 120px;
+}
+
+.navheader a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.navheader a:hover {
+    color: #f39c12; 
+}
+
+/* Menu ouvert */
+
+header.menu-open .navheader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Animation du menu burger */
+
+header.menu-open .menu-toggle div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+header.menu-open .menu-toggle div:nth-child(2) {
+    opacity: 0;
+}
+
+header.menu-open .menu-toggle div:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -10px);
+}
+
+/*Contact*/
+
+.headContact{
+    background-color: var(--secondary-color);
+}
+.no-center {
+    text-align: left; /* Remplace l'alignement pour cette section */
+  }
+.headContact h1{
+    margin: 0 auto;
+    padding: 0.5em;
+    color: var(--white-color);
+}
+.headContact p{
+    color: var(--white-color);
+}
+
+.formcontainer {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #242424;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Form styling */
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  form label {
+    width: 80%;
+    margin: auto;
+    font-size: 1em;
+    color: var(--primary-color);
+  }
+  
+  form input,
+  form select,
+  form textarea {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: #1b1b1b;
+    color: #fff;
+    font-size: 1em;
+  }
+  
+  form input::placeholder,
+  form textarea::placeholder {
+    color: #aaa;
+  }
+  
+  form button {
+    width: 150px;
+    margin: auto;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: #1b1b1b;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  form button:hover {
+    background: #00cca3;
+  }
+  .map-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .map-container h2 {
+    color: #00e1ff;
+    margin-bottom: 10px;
+  }
+  
+  iframe {
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 225, 255, 0.5);
+  }
+  /******************* a-propos**********************/
+  
+  
+  
+  
+
