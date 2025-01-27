@@ -13,6 +13,39 @@ const header = document.querySelector('header');
 menuToggle.addEventListener('click', () => {
     header.classList.toggle('menu-open');
 });
+
+/********************* Fonctionalité AJAX **************************/
+
+// Fonction pour récupérer et afficher les expériences
+async function fetchExperiences() {
+  try {
+      const response = await fetch("http://localhost:3000/experiences");
+      if (!response.ok) throw new Error("Erreur lors du chargement des expériences");
+      const experiences = await response.json();
+
+      // Insérer les expériences dans la liste
+      const experiencesList = document.querySelector(".listeExp");
+      experiences.forEach((exp, index) => {
+          // Ajouter une classe dynamique comme "exp1", "exp2", etc.
+          const listItem = document.createElement("li");
+          listItem.className = `exp${index + 1}`; // exp1, exp2, exp3...
+
+          listItem.innerHTML = `
+              <img src="${exp.image}" alt="${exp.alt}">
+              <h3>${exp.title}</h3>
+              <p>${exp.description}</p>
+              <a href="${exp.link}">En savoir plus</a>
+          `;
+          experiencesList.appendChild(listItem);
+      });
+  } catch (error) {
+      console.error("Erreur :", error);
+  }
+}
+
+// Charger les expériences au chargement de la page
+fetchExperiences();
+
 /******************** Appel à une API *************************/
 const apiKey = '170d7fee5ec142c396b55b76f825a417'; // Remplace par ta clé API RAWG
     const endpoint = `https://api.rawg.io/api/games?tags=vr&key=${apiKey}`;
@@ -78,37 +111,6 @@ const apiKey = '170d7fee5ec142c396b55b76f825a417'; // Remplace par ta clé API R
     fetchGames();
     
 
-/********************* Fonctionalité AJAX **************************/
-
-// Fonction pour récupérer et afficher les expériences
-async function fetchExperiences() {
-  try {
-      const response = await fetch("http://localhost:3000/experiences");
-      if (!response.ok) throw new Error("Erreur lors du chargement des expériences");
-      const experiences = await response.json();
-
-      // Insérer les expériences dans la liste
-      const experiencesList = document.querySelector(".listeExp");
-      experiences.forEach((exp, index) => {
-          // Ajouter une classe dynamique comme "exp1", "exp2", etc.
-          const listItem = document.createElement("li");
-          listItem.className = `exp${index + 1}`; // exp1, exp2, exp3...
-
-          listItem.innerHTML = `
-              <img src="${exp.image}" alt="${exp.alt}">
-              <h3>${exp.title}</h3>
-              <p>${exp.description}</p>
-              <a href="${exp.link}">En savoir plus</a>
-          `;
-          experiencesList.appendChild(listItem);
-      });
-  } catch (error) {
-      console.error("Erreur :", error);
-  }
-}
-
-// Charger les expériences au chargement de la page
-fetchExperiences();
 
 
 /***************************Gestion des cookies****************************/
