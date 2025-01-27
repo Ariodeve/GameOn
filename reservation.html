@@ -27,6 +27,195 @@
         </nav>
         <a href="#" class="reservation-btn">Réservez</a>
     </header>
+    <!-- test api -->
+    <body>
+    <section class="reservation">
+        <style>
+            .games-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+    }
+    .game {
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .game:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .game img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .game h3 {
+      font-size: 16px;
+      color: #007bff;
+      margin: 10px 0;
+    }
+    .game p {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: red;
+    }
+    form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    form input, form select, form button {
+      margin-bottom: 10px;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    form button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Réservez votre session de réalité virtuelle</h1>
+
+  <!-- Section des jeux VR -->
+  <div class="games-container" id="games"></div>
+
+  <!-- Modal pour le formulaire de réservation -->
+  <div class="modal" id="reservationModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Réserver une session</h2>
+      <form id="reservationForm">
+        <label for="selectedGame">Jeu sélectionné :</label>
+        <input type="text" id="selectedGame" readonly>
+
+        <label for="date">Date :</label>
+        <input type="date" id="date" required>
+
+        <label for="time">Horaire :</label>
+        <select id="time" required>
+          <option value="10:00">10:00 - 11:00</option>
+          <option value="11:00">11:00 - 12:00</option>
+          <option value="13:00">13:00 - 14:00</option>
+          <option value="14:00">14:00 - 15:00</option>
+          <option value="15:00">15:00 - 16:00</option>
+        </select>
+
+        <button type="submit">Réserver</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const apiKey = '170d7fee5ec142c396b55b76f825a417'; // Remplace par ta clé API RAWG
+    const endpoint = `https://api.rawg.io/api/games?tags=vr&key=${apiKey}`;
+
+    // Fonction pour récupérer les jeux et les afficher
+    async function fetchGames() {
+      try {
+        const response = await fetch(endpoint);
+        if (!response.ok) {
+          throw new Error('Erreur lors de la récupération des jeux VR');
+        }
+        const data = await response.json();
+        displayGames(data.results);
+      } catch (error) {
+        console.error('Erreur :', error);
+      }
+    }
+
+    // Afficher les jeux dans la section "games-container"
+    function displayGames(games) {
+      const gamesContainer = document.getElementById('games');
+      games.forEach(game => {
+        const gameDiv = document.createElement('div');
+        gameDiv.classList.add('game');
+        gameDiv.setAttribute('data-game', game.name); // Ajouter un attribut pour le nom du jeu
+        gameDiv.innerHTML = `
+          <h3>${game.name}</h3>
+          <img src="${game.background_image}" alt="${game.name}">
+          <p><strong>Note :</strong> ${game.rating} / 5</p>
+        `;
+        gamesContainer.appendChild(gameDiv);
+
+        // Rendre chaque carte cliquable
+        gameDiv.addEventListener('click', () => openReservationModal(game.name));
+      });
+    }
+
+    // Ouvrir le modal avec le jeu sélectionné
+    function openReservationModal(gameName) {
+      document.getElementById('selectedGame').value = gameName;
+      document.getElementById('reservationModal').style.display = 'flex';
+    }
+
+    // Fermer le modal
+    document.getElementById('closeModal').addEventListener('click', () => {
+      document.getElementById('reservationModal').style.display = 'none';
+    });
+
+    // Gestionnaire de soumission du formulaire
+    const reservationForm = document.getElementById('reservationForm');
+    reservationForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const selectedGame = document.getElementById('selectedGame').value;
+      const selectedDate = document.getElementById('date').value;
+      const selectedTime = document.getElementById('time').value;
+
+      alert(`Réservation confirmée pour "${selectedGame}" le ${selectedDate} à ${selectedTime}.`);
+      document.getElementById('reservationModal').style.display = 'none';
+    });
+
+    // Appel initial
+    fetchGames();
+  </script>
+
+    </section>
     
 <!-------------------------- section footer -------------------------->
     <footer>

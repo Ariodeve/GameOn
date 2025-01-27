@@ -82,6 +82,9 @@ p{
     max-width: 69%;
     margin: auto;
   }
+  .padding0{
+    padding: 0;
+  }
 
   /************ Header **************/
   /* Menu burger */
@@ -104,14 +107,14 @@ p{
 /* Navigation (menu) */
 .navheader {
     display: none;
-    position: fixed; /* Pour couvrir toute la page */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Prend toute la largeur */
-    height: 100%; /* Prend toute la hauteur */
-    background-color: rgba(0, 0, 0, 0.95); /* Fond semi-transparent */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    z-index: 1000; /* Juste sous le bouton */
+    z-index: 1000;
 }
 
 header img {
@@ -241,7 +244,6 @@ a.reservation-btn {
 }
 
 .a_propos img {
-    border-radius: 5px;
     max-width: 80%;
     margin: auto;
     margin-top: 2em;   
@@ -291,7 +293,7 @@ a.reservation-btn {
     border: solid 1px #000000;
     border-radius: 10px;
     height: 300px; 
-    background: linear-gradient(to bottom,#00BFFF,#FFFFFF);
+    background: linear-gradient(to bottom,var(--primary-color),var(--white-color));
     color: #000000;
 }
 
@@ -526,6 +528,9 @@ footer .social-links li img:hover {
         order: 1;
         margin: 0;
     }
+    .imgLeft img {
+        order: 0; /* L'image passe avant le texte */
+    }
 
     .a_propos p{
         max-width: 50%;
@@ -625,21 +630,6 @@ footer .social-links li img:hover {
     color: var(--black-color);
 }
 
-.div1{ 
-    background-color: var(--white-color);
-    border-radius: 80px;
-    margin: 0em auto 2.5em; 
-    width: 80%;
-    overflow: hidden;   
-}
-
-.div1 img{
-    max-height: 250px;
-    object-fit: cover;
-    width: 100%;
-    display: block;      
-}
-
 /* Section FAQ*/
 
 .faq h2{
@@ -647,15 +637,65 @@ footer .social-links li img:hover {
 }
 
 .faq li{
+    position: relative;
     font-size: 1.6rem;
     border: 1px solid var(--black-color);
     text-align: start;
     padding: 1.6em;
     max-width: 80%;
-    margin: 2em auto;
+    margin: 2em auto;   
 }
 
-/* Tablette (>= 768px) */
+.faq {
+    width: 90%;
+    margin: auto;
+}
+
+.faq ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.faq .answer {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--white-color);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.faq li.active .answer {
+    display: block;
+}
+
+.faq li::after {
+    content: "▼";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #888;
+    transition: transform 0.3s ease;
+}
+
+.faq li.active::after {
+    transform: translateY(-50%) rotate(180deg); 
+}
+.div1{ 
+    background-color: var(--white-color);
+    border-radius: 80px;
+    margin: 0em auto 2.5em; 
+    width: 80%;
+    overflow: hidden;     
+}
+
+.div1 img{
+    max-height: 250px;
+    object-fit: cover; 
+    width: 100%;  
+}
 
 @media (min-width: 768px) {
     
@@ -663,24 +703,23 @@ footer .social-links li img:hover {
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 400px;
     }
 
     .div1 div {
-        flex: 1 1 calc(50%); 
-    }
+        /*flex: 1 calc(50%);*/
+        width: 50%;
 
-    .div1 img {
-
-        object-fit: cover;
-        width: 100%; 
-        height: auto;
     }
-    .faq li{
-        max-width: 60%;
+    .div1 img{
+        max-height: none; 
+        object-fit: cover; 
+        width: 100%;
     }
+    .faq {
+        width: 80%; 
+    }    
 }
-
-/*test*/
 
 /* Header de base */
 
@@ -693,10 +732,6 @@ header img {
     color: #fff;
     font-size: 1.5rem;
     transition: color 0.3s ease;
-}
-
-.navheader a:hover {
-    color: #f39c12; 
 }
 
 /* Menu ouvert */
@@ -725,10 +760,10 @@ header.menu-open .menu-toggle div:nth-child(3) {
 /*Contact*/
 
 .headContact{
-    background-color: var(--secondary-color);
+    background: linear-gradient(to bottom,var(--secondary-color),var(--black-color));
 }
 .no-center {
-    text-align: left; /* Remplace l'alignement pour cette section */
+    text-align: left;
   }
 .headContact h1{
     margin: 0 auto;
@@ -740,14 +775,18 @@ header.menu-open .menu-toggle div:nth-child(3) {
 }
 
 .formcontainer {
-    width: 90%;
+    width: 80%;
     max-width: 800px;
     margin: 20px auto;
     background: #242424;
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
   }
+  iframe{
+    width: 90%;
+  }
+  
   
   /* Form styling */
 
@@ -797,7 +836,7 @@ header.menu-open .menu-toggle div:nth-child(3) {
   }
   
   form button:hover {
-    background: #00cca3;
+    background: var(--primary-color);
   }
   .map-container {
     margin-top: 20px;
@@ -814,6 +853,51 @@ header.menu-open .menu-toggle div:nth-child(3) {
     box-shadow: 0 0 15px rgba(0, 225, 255, 0.5);
   }
   /******************* a-propos**********************/
+/*Carousel*/
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-height: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel-image {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+/*réservation*/
+.reservation{
+    background-color: #000000;
+}
+
+  
   
   
   
