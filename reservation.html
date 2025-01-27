@@ -149,72 +149,6 @@
       </form>
     </div>
   </div>
-
-  <script>
-    const apiKey = '170d7fee5ec142c396b55b76f825a417'; // Remplace par ta clé API RAWG
-    const endpoint = `https://api.rawg.io/api/games?tags=vr&key=${apiKey}`;
-
-    // Fonction pour récupérer les jeux et les afficher
-    async function fetchGames() {
-      try {
-        const response = await fetch(endpoint);
-        if (!response.ok) {
-          throw new Error('Erreur lors de la récupération des jeux VR');
-        }
-        const data = await response.json();
-        displayGames(data.results);
-      } catch (error) {
-        console.error('Erreur :', error);
-      }
-    }
-
-    // Afficher les jeux dans la section "games-container"
-    function displayGames(games) {
-      const gamesContainer = document.getElementById('games');
-      games.forEach(game => {
-        const gameDiv = document.createElement('div');
-        gameDiv.classList.add('game');
-        gameDiv.setAttribute('data-game', game.name); // Ajouter un attribut pour le nom du jeu
-        gameDiv.innerHTML = `
-          <h3>${game.name}</h3>
-          <img src="${game.background_image}" alt="${game.name}">
-          <p><strong>Note :</strong> ${game.rating} / 5</p>
-        `;
-        gamesContainer.appendChild(gameDiv);
-
-        // Rendre chaque carte cliquable
-        gameDiv.addEventListener('click', () => openReservationModal(game.name));
-      });
-    }
-
-    // Ouvrir le modal avec le jeu sélectionné
-    function openReservationModal(gameName) {
-      document.getElementById('selectedGame').value = gameName;
-      document.getElementById('reservationModal').style.display = 'flex';
-    }
-
-    // Fermer le modal
-    document.getElementById('closeModal').addEventListener('click', () => {
-      document.getElementById('reservationModal').style.display = 'none';
-    });
-
-    // Gestionnaire de soumission du formulaire
-    const reservationForm = document.getElementById('reservationForm');
-    reservationForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const selectedGame = document.getElementById('selectedGame').value;
-      const selectedDate = document.getElementById('date').value;
-      const selectedTime = document.getElementById('time').value;
-
-      alert(`Réservation confirmée pour "${selectedGame}" le ${selectedDate} à ${selectedTime}.`);
-      document.getElementById('reservationModal').style.display = 'none';
-    });
-
-    // Appel initial
-    fetchGames();
-  </script>
-
     </section>
     
 <!-------------------------- section footer -------------------------->
@@ -239,11 +173,21 @@
         </nav>
     </div>
     <div class="mention">
-        <a href="#" class="legal-link"><p>Mentions légales, politique de confidentialité</p></a>
+        <a href="politique-confidentialite.html" class="legal-link"><p>Mentions légales, politique de confidentialité</p></a>
         <p>
             2024 GameOn. Tous droit réservés
         </p>
     </div>
-    </footer>             
+    </footer>
+    <!-- Bannière de consentement pour les cookies -->
+    <div id="cookie-banner">
+        <p>
+            Nous utilisons des cookies pour améliorer votre expérience utilisateur. En continuant à utiliser ce site, vous acceptez notre <a href="politique-confidentialite.html" style="color: #00aaff; text-decoration: underline;">politique de confidentialité</a>.
+        </p>
+        <div>
+        <button id="accept-cookies">Accepter</button>
+        <button id="decline-cookies">Refuser</button>
+        </div>
+    </div>             
 </body>
 </html>

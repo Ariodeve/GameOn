@@ -892,11 +892,44 @@ header.menu-open .menu-toggle div:nth-child(3) {
 .carousel-button.next {
   right: 10px;
 }
+
 /*réservation*/
 .reservation{
     background-color: #000000;
 }
 
+/* Banière de cookies*/
+#cookie-banner {
+    position: fixed; /* La bannière reste en bas même quand on défile */
+    bottom: 0; /* Fixe la bannière tout en bas de l'écran */
+    left: 0; /* Étend la bannière depuis la gauche */
+    width: 100%; /* Prend toute la largeur de l'écran */
+    background-color: #222; /* Fond sombre */
+    color: #fff; /* Texte en blanc */
+    padding: 1em; /* Espace interne pour une meilleure lisibilité */
+    text-align: center; /* Centrer le texte */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Ombre subtile pour la séparation visuelle */
+    z-index: 1000; /* Toujours au-dessus du contenu */
+  }
+  
+  #cookie-banner a {
+    color: #00aaff; /* Couleur pour les liens */
+    text-decoration: underline; /* Surlignage pour montrer qu'il s'agit d'un lien */
+  }
+  
+  #cookie-banner button {
+    margin-left: 1em; /* Espacement entre les boutons */
+    padding: 0.5em 1em; /* Taille des boutons */
+    background-color: #4caf50; /* Couleur de fond des boutons (vert) */
+    color: #fff; /* Texte des boutons */
+    border: none; /* Pas de bordures */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pour montrer que c'est cliquable */
+  }
+  
+  #cookie-banner button#decline-cookies {
+    background-color: #f44336; /* Couleur rouge pour "Refuser" */
+  }
   
   
   

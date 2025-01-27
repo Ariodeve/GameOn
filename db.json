@@ -1,0 +1,25 @@
+{
+    "experiences": [
+      {
+        "image": "assets/Img/heroexp1.jpg",
+        "alt": "femme avec casque vr",
+        "title": "Exploration immersive",
+        "description": "Plongez dans des mondes virtuels captivants, allant des jungles exotiques aux paysages futuristes. Une expérience d'évasion pour les explorateurs de tous âges.",
+        "link": ""
+      },
+      {
+        "image": "assets/Img/heroexp2.jpg",
+        "alt": "des joueurs avec casque vr",
+        "title": "Compétitions multijoueurs VR",
+        "description": "Défiez vos amis ou d'autres joueurs en ligne dans des jeux compétitifs qui combinent stratégie et réflexes. Parfait pour les amateurs de défis.",
+        "link": ""
+      },
+      {
+        "image": "assets/Img/heroexp3.jpg",
+        "alt": "une moto pour expériences vr",
+        "title": "Simulations interactives",
+        "description": "Vivez des aventures réalistes, que ce soit piloter un avion, participer à une course ou expérimenter des situations inédites, tout en développant vos compétences.",
+        "link": ""
+      }
+    ]
+  }
