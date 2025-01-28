@@ -702,18 +702,20 @@ footer .social-links li img:hover {
     .div1 {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
         height: 400px;
     }
 
-    .div1 div {
-        /*flex: 1 calc(50%);*/
-        width: 50%;
-
+    .div1 > div {
+        flex: 1 ;
+    }
+    .probleme{
+        align-self: center;
     }
     .div1 img{
-        max-height: none; 
-        object-fit: cover; 
+        max-height: none;
+        height: 100%;
+        object-fit: cover;
         width: 100%;
     }
     .faq {
@@ -914,21 +916,21 @@ header.menu-open .menu-toggle div:nth-child(3) {
   
   #cookie-banner a {
     color: #00aaff; /* Couleur pour les liens */
-    text-decoration: underline; /* Surlignage pour montrer qu'il s'agit d'un lien */
+    text-decoration: underline;
   }
   
   #cookie-banner button {
-    margin-left: 1em; /* Espacement entre les boutons */
-    padding: 0.5em 1em; /* Taille des boutons */
-    background-color: #4caf50; /* Couleur de fond des boutons (vert) */
-    color: #fff; /* Texte des boutons */
-    border: none; /* Pas de bordures */
-    border-radius: 5px; /* Coins arrondis */
-    cursor: pointer; /* Curseur pour montrer que c'est cliquable */
+    margin-left: 1em;
+    padding: 0.5em 1em;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
   
   #cookie-banner button#decline-cookies {
-    background-color: #f44336; /* Couleur rouge pour "Refuser" */
+    background-color: #f44336;
   }
   
   
