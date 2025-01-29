@@ -134,31 +134,6 @@
         <button id="accept-cookies">Accepter</button>
         <button id="decline-cookies">Refuser</button>
         </div>
-    </div>  
-    <script>
-/********************** Gestion Carousel************************/
-const track = document.querySelector('.carousel-track');
-const images = Array.from(track.children);
-const nextButton = document.querySelector('.carousel-button.next');
-const prevButton = document.querySelector('.carousel-button.prev');
-
-let currentIndex = 0;
-
-function updateCarousel(index) {
-  const imageWidth = images[0].getBoundingClientRect().width;
-  track.style.transform = `translateX(-${index * imageWidth}px)`;
-}
-
-nextButton.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateCarousel(currentIndex);
-});
-
-prevButton.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateCarousel(currentIndex);
-});
-
-    </script>          
+    </div>         
 </body>
 </html>

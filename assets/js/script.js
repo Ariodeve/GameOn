@@ -17,15 +17,17 @@ menuToggle.addEventListener('click', () => {
 /********************* Fonctionalité AJAX **************************/
 
 // Fonction pour récupérer et afficher les expériences
+
 async function fetchExperiences() {
   try {
-      const response = await fetch("http://localhost:3000/experiences");
+      const response = await fetch("../../db.json");/*http://localhost:3000/experiences*/
       if (!response.ok) throw new Error("Erreur lors du chargement des expériences");
-      const experiences = await response.json();
-
+      const data = await response.json();
+     
       // Insérer les expériences dans la liste
       const experiencesList = document.querySelector(".listeExp");
-      experiences.forEach((exp, index) => {
+      if(experiencesList){
+        data.experiences.forEach((exp, index) => {
           // Ajouter une classe dynamique comme "exp1", "exp2", etc.
           const listItem = document.createElement("li");
           listItem.className = `exp${index + 1}`; // exp1, exp2, exp3...
@@ -38,19 +40,24 @@ async function fetchExperiences() {
           `;
           experiencesList.appendChild(listItem);
       });
+      }
+      
   } catch (error) {
       console.error("Erreur :", error);
   }
 }
 
 // Charger les expériences au chargement de la page
+
 fetchExperiences();
 
 /******************** Appel à une API *************************/
-const apiKey = '170d7fee5ec142c396b55b76f825a417'; // Remplace par ta clé API RAWG
-    const endpoint = `https://api.rawg.io/api/games?tags=vr&key=${apiKey}`;
+
+const apiKey = '170d7fee5ec142c396b55b76f825a417'; 
+const endpoint = `https://api.rawg.io/api/games?tags=vr&key=${apiKey}`;
 
     // Fonction pour récupérer les jeux et les afficher
+
     async function fetchGames() {
       try {
         const response = await fetch(endpoint);
@@ -65,10 +72,12 @@ const apiKey = '170d7fee5ec142c396b55b76f825a417'; // Remplace par ta clé API R
     }
 
     // Afficher les jeux dans la section "games-container"
+
     function displayGames(games) {
       const gamesContainer = document.getElementById('games');
-      games.forEach(game => {
-        const gameDiv = document.createElement('div');
+      if(gamesContainer){
+        games.forEach(game => {
+      const gameDiv = document.createElement('div');
         gameDiv.classList.add('game');
         gameDiv.setAttribute('data-game', game.name); // Ajouter un attribut pour le nom du jeu
         gameDiv.innerHTML = `
@@ -79,41 +88,77 @@ const apiKey = '170d7fee5ec142c396b55b76f825a417'; // Remplace par ta clé API R
         gamesContainer.appendChild(gameDiv);
 
         // Rendre chaque carte cliquable
+
         gameDiv.addEventListener('click', () => openReservationModal(game.name));
       });
+      }   
     }
 
     // Ouvrir le modal avec le jeu sélectionné
+
     function openReservationModal(gameName) {
       document.getElementById('selectedGame').value = gameName;
       document.getElementById('reservationModal').style.display = 'flex';
     }
-
+    
     // Fermer le modal
-    document.getElementById('closeModal').addEventListener('click', () => {
+
+    let closemodal = document.getElementById('closeModal')
+    if(closemodal){
+      closemodal.addEventListener('click', () => {
       document.getElementById('reservationModal').style.display = 'none';
     });
+    }
 
     // Gestionnaire de soumission du formulaire
-    const reservationForm = document.getElementById('reservationForm');
-    reservationForm.addEventListener('submit', function (e) {
-      e.preventDefault();
 
+    const reservationForm = document.getElementById('reservationForm');
+    if(reservationForm){
+      
+      reservationForm.addEventListener('submit', function (e) {
+      e.preventDefault();
       const selectedGame = document.getElementById('selectedGame').value;
       const selectedDate = document.getElementById('date').value;
       const selectedTime = document.getElementById('time').value;
-
       alert(`Réservation confirmée pour "${selectedGame}" le ${selectedDate} à ${selectedTime}.`);
       document.getElementById('reservationModal').style.display = 'none';
     });
+    }
 
     // Appel initial
-    fetchGames();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchGames();
+    });
     
+/********************** Gestion Carousel************************/
 
+const track = document.querySelector('.carousel-track');
+if(track){
+  const images = Array.from(track.children);
+const nextButton = document.querySelector('.carousel-button.next');
+const prevButton = document.querySelector('.carousel-button.prev');
 
+let currentIndex = 0;
 
+function updateCarousel(index) {
+  const imageWidth = images[0].getBoundingClientRect().width;
+  track.style.transform = `translateX(-${index * imageWidth}px)`;
+}
+
+nextButton.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateCarousel(currentIndex);
+});
+
+prevButton.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateCarousel(currentIndex);
+});
+}
+ 
 /***************************Gestion des cookies****************************/
+
 // Vérifie si le consentement a déjà été donné
 if (document.cookie.includes('cookies-accepted=true') || document.cookie.includes('cookies-accepted=false')) {
     document.getElementById('cookie-banner').style.display = 'none';
