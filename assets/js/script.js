@@ -20,7 +20,7 @@ menuToggle.addEventListener('click', () => {
 
 async function fetchExperiences() {
   try {
-      const response = await fetch("../../db.json");/*http://localhost:3000/experiences*/
+      const response = await fetch("../../db.json");
       if (!response.ok) throw new Error("Erreur lors du chargement des expériences");
       const data = await response.json();
      

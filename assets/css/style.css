@@ -91,6 +91,9 @@ p{
   /************ Header **************/
   /* Menu burger */
 .menu-toggle {
+    position: fixed;
+    top: 5dvh;
+    right: 20px;
     margin-left: 5em;
     display: flex;
     flex-direction: column;
@@ -727,9 +730,6 @@ footer .social-links li img:hover {
 
 /* Header de base */
 
-header img {
-    width: 120px;
-}
 
 .navheader a {
     text-decoration: none;
@@ -741,10 +741,11 @@ header img {
 /* Menu ouvert */
 
 header.menu-open .navheader {
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: hidden;   
 }
 
 /* Animation du menu burger */
@@ -859,7 +860,7 @@ header.menu-open .menu-toggle div:nth-child(3) {
   /******************* a-propos**********************/
 /*Carousel*/
 
-.carousel {
+/*.carousel {
   position: relative;
   width: 100%;
   max-height: 500px;
@@ -870,6 +871,8 @@ header.menu-open .menu-toggle div:nth-child(3) {
 .carousel-track {
   display: flex;
   transition: transform 0.4s ease-in-out;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .carousel-image {
@@ -877,7 +880,27 @@ header.menu-open .menu-toggle div:nth-child(3) {
   max-width: 100%;
   object-fit: cover;
   flex-shrink: 0;
-}
+}*/
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Remplacer max-height par height */
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .carousel-track {
+    display: flex;
+    height: 100%; /* Ajouter hauteur 100% */
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .carousel-image {
+    flex: 0 0 100%; /* Forcer chaque image à prendre 100% de la largeur */
+    max-height: 100%; 
+    object-fit: cover; /* Conserver le ratio tout en couvrant la zone */
+
+  }
 
 .carousel-button {
   position: absolute;
@@ -901,8 +924,13 @@ header.menu-open .menu-toggle div:nth-child(3) {
 
 /*réservation*/
 .reservation{
-    background-color: #000000;
+    background-color: var(--black-color);
 }
+.reservation h1{
+    margin: 0 auto;
+    padding: 2em;
+}
+
 .games-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -911,16 +939,16 @@ header.menu-open .menu-toggle div:nth-child(3) {
   }
   .game {
     padding: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--black-color);
     border-radius: 8px;
-    background-color: #fff;
+    background: linear-gradient(to bottom,var(--dark-gray),var(--soft-white));
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
   }
   .game:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
   }
   .game img {
     width: 100%;
@@ -930,12 +958,13 @@ header.menu-open .menu-toggle div:nth-child(3) {
   }
   .game h3 {
     font-size: 16px;
-    color: #007bff;
     margin: 10px 0;
+    color: var(--white-color);
   }
   .game p {
     font-size: 14px;
-    margin: 5px 0;
+    margin: 5px auto;
+
   }
   /* Modal Styles */
   .modal {
@@ -950,7 +979,7 @@ header.menu-open .menu-toggle div:nth-child(3) {
     align-items: center;
   }
   .modal-content {
-    background-color: #fff;
+    background-color: var(--dark-gray);
     padding: 20px;
     border-radius: 10px;
     width: 90%;
@@ -960,14 +989,14 @@ header.menu-open .menu-toggle div:nth-child(3) {
     margin-top: 0;
   }
   .close {
-    color: #aaa;
+    color: var(--soft-white);
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
   }
   .close:hover {
-    color: red;
+    color: var(--black-color);
   }
   form label {
     display: block;
@@ -979,39 +1008,38 @@ header.menu-open .menu-toggle div:nth-child(3) {
     box-sizing: border-box;
   }
   form button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--black-color);
     border: none;
     cursor: pointer;
   }
   form button:hover {
-    background-color: #0056b3;
+    background-color: var(--secondary-color);
   }
 
 /* Banière de cookies*/
 #cookie-banner {
-    position: fixed; /* La bannière reste en bas même quand on défile */
-    bottom: 0; /* Fixe la bannière tout en bas de l'écran */
-    left: 0; /* Étend la bannière depuis la gauche */
-    width: 100%; /* Prend toute la largeur de l'écran */
-    background-color: #222; /* Fond sombre */
-    color: #fff; /* Texte en blanc */
-    padding: 1em; /* Espace interne pour une meilleure lisibilité */
-    text-align: center; /* Centrer le texte */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Ombre subtile pour la séparation visuelle */
-    z-index: 1000; /* Toujours au-dessus du contenu */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--dark-gray);
+    color: var(--soft-white);
+    padding: 1em;
+    text-align: center;
+    z-index: 1000;
   }
   
   #cookie-banner a {
-    color: #00aaff; /* Couleur pour les liens */
-    text-decoration: underline;
+    color: var(--primary-color);
+
   }
   
   #cookie-banner button {
     margin-left: 1em;
     padding: 0.5em 1em;
     background-color: #4caf50;
-    color: #fff;
+    color: var(--soft-white);
     border: none;
     border-radius: 5px;
     cursor: pointer;
