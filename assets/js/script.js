@@ -18,33 +18,34 @@ menuToggle.addEventListener('click', () => {
 
 // Fonction pour récupérer et afficher les expériences
 
-async function fetchExperiences() {
-  try {
-      const response = await fetch("../../db.json");
-      if (!response.ok) throw new Error("Erreur lors du chargement des expériences");
-      const data = await response.json();
-     
-      // Insérer les expériences dans la liste
+function fetchExperiences() {
+  fetch("../../db.json")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Erreur lors du chargement des expériences");
+      }
+      return response.json();
+    })
+    .then(data => {
       const experiencesList = document.querySelector(".listeExp");
-      if(experiencesList){
+      if (experiencesList) {
         data.experiences.forEach((exp, index) => {
-          // Ajouter une classe dynamique comme "exp1", "exp2", etc.
           const listItem = document.createElement("li");
           listItem.className = `exp${index + 1}`; // exp1, exp2, exp3...
 
           listItem.innerHTML = `
-              <img src="${exp.image}" alt="${exp.alt}">
-              <h3>${exp.title}</h3>
-              <p>${exp.description}</p>
-              <a href="${exp.link}">En savoir plus</a>
+            <img src="${exp.image}" alt="${exp.alt}">
+            <h3>${exp.title}</h3>
+            <p>${exp.description}</p>
+            <a href="${exp.link}">En savoir plus</a>
           `;
           experiencesList.appendChild(listItem);
-      });
+        });
       }
-      
-  } catch (error) {
+    })
+    .catch(error => {
       console.error("Erreur :", error);
-  }
+    });
 }
 
 // Charger les expériences au chargement de la page
