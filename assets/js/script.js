@@ -19,7 +19,7 @@ menuToggle.addEventListener('click', () => {
 // Fonction pour récupérer et afficher les expériences
 
 function fetchExperiences() {
-  fetch("../../db.json")
+  fetch("/db.json")
     .then(response => {
       if (!response.ok) {
         throw new Error("Erreur lors du chargement des expériences");
