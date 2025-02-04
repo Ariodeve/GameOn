@@ -160,39 +160,6 @@ prevButton.addEventListener('click', () => {
  
 /***************************Gestion des cookies****************************/
 
-// Vérifie si le consentement a déjà été donné
-if (document.cookie.includes('cookies-accepted=true') || document.cookie.includes('cookies-accepted=false')) {
-    document.getElementById('cookie-banner').style.display = 'none';
-}
-              
-// Fonction pour gérer l'acceptation des cookies
-  document.getElementById('accept-cookies').addEventListener('click', function () {
-  document.cookie = "cookies-accepted=true; path=/; max-age=" + 60 * 60 * 24 * 365; // 1 an
-  document.getElementById('cookie-banner').style.display = 'none';
-  alert('Merci d’avoir accepté les cookies !');
-});
-              
-// Fonction pour refuser les cookies
-  document.getElementById('decline-cookies').addEventListener('click', function () {
-  document.cookie = "cookies-accepted=false; path=/; max-age=" + 60 * 60 * 24 * 365; // 1 an
-  document.getElementById('cookie-banner').style.display = 'none';
-  alert('Vous avez refusé les cookies.');
-});
-if (document.cookie.includes('cookies-accepted=true')) {
-// Charger Google Analytics ou tout autre script
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-XXXXXXXXX-X', 'auto');
-ga('send', 'pageview');
-}
-
-
-
-
-
 
 
 
