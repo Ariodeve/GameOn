@@ -91,8 +91,6 @@ p{
   /************ Header **************/
   /* Menu burger */
 .menu-toggle {
-    /* position: fixed;
-    top: 5dvh; */
     right: 20px;
     margin-left: 5em;
     display: flex;
@@ -335,6 +333,7 @@ footer img {
 footer .legal-link {
     padding: 1em;
     color: var(--black-color);
+    text-decoration: underline;
     transition: color 0.3s ease;
 }
 
@@ -494,7 +493,8 @@ footer .social-links li img:hover {
     }
     .contact-info p{
         text-align: left;
-      }  
+      } 
+      
 }
 
 /* Responsivité - Ordinateurs */
@@ -779,7 +779,7 @@ header.menu-open .menu-toggle div:nth-child(3) {
   }
 .headContact h1{
     margin: 0 auto;
-    padding: 0.5em;
+    padding: 1.5em;
     color: var(--white-color);
 }
 .headContact p{
@@ -913,6 +913,12 @@ header.menu-open .menu-toggle div:nth-child(3) {
 .reservation{
     background-color: var(--black-color);
     padding: 0;
+}
+
+.reservation h1{
+    margin: 0 auto;
+    padding: 2em;
+
 }
 
 .games-container {
@@ -1119,7 +1125,7 @@ header.menu-open .menu-toggle div:nth-child(3) {
 
 /* Banière de cookies*/
 
-/* #cookie-banner {
+ #cookie-banner {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -1148,7 +1154,7 @@ header.menu-open .menu-toggle div:nth-child(3) {
   
   #cookie-banner button#decline-cookies {
     background-color: #f44336;
-  } */
+  } 
 
   
   @media (min-width: 768px) {
@@ -1163,6 +1169,7 @@ header.menu-open .menu-toggle div:nth-child(3) {
         flex: 1;
     }
   }
+
   
 
   
