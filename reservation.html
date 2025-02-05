@@ -9,7 +9,7 @@
     <title>GameOn</title>
 </head>
 <body>
-    <!-----------------------_ section header ------------------------>
+<!----------------------- section header ------------------------>
     <header>
         <a href="index.html"><img src="assets/Img/LogoManettePlus-svg.svg" alt="Logo"></a>
         <div class="menu-toggle" id="menu-toggle">
@@ -27,118 +27,120 @@
         </nav>
         <a href="#" class="reservation-btn">Réservez</a>
     </header>
-  <section class="reservation">
-  <h1>Réservez votre session de réalité virtuelle</h1>
-  <!-- Section des jeux VR -->
-  <div id="games" class="games-container">
+<!--------------------- Section des jeux VR ---------------------->
+    <section class="reservation">
+        <h1>Réservez votre session de réalité virtuelle</h1>
+        <div id="games" class="games-container">
 
-  </div>
-  <!-- Modal pour le formulaire de réservation -->
-  <div class="modal" id="reservationModal">
-    <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
-      <h2>Réserver une session</h2>
-      <form id="reservationForm">
-        <label for="selectedGame">Jeu sélectionné :</label>
-        <input type="text" id="selectedGame" readonly>
-
-        <label for="date">Date :</label>
-        <input type="date" id="date" required>
-
-        <label for="time">Horaire :</label>
-        <select id="time" required>
-          <option value="10:00">10:00 - 11:00</option>
-          <option value="11:00">11:00 - 12:00</option>
-          <option value="13:00">13:00 - 14:00</option>
-          <option value="14:00">14:00 - 15:00</option>
-          <option value="15:00">15:00 - 16:00</option>
-        </select>
-
-        <button type="submit">Réserver</button>
-      </form>
-    </div>
-  </div>
-  <section class="pricing-section">
-    <h2>Nos Tarifs</h2>
-    <p class="pricing-description">Découvrez nos offres adaptées à vos besoins. Choisissez le forfait qui vous convient le mieux.</p>
-    <div class="pricing-container">
-        <!-- Forfait de base -->
-        <div class="pricing-card">
-            <h3>Forfait Découverte</h3>
-            <p class="price">19€ <span>/mois</span></p>
-            <ul class="features">
-                <li>Accès à 10 jeux</li>
-                <li>Support technique de base</li>
-                <li>Mises à jour mensuelles</li>
-            </ul>
-            <button class="cta-button">Choisir ce forfait</button>
         </div>
+<!-- Modal pour le formulaire de réservation -->
+        <div class="modal" id="reservationModal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <h2>Réserver une session</h2>
+                    <form id="reservationForm">
+                        <label for="selectedGame">Jeu sélectionné :</label>
+                        <input type="text" id="selectedGame" readonly>
 
-        <!-- Forfait standard -->
-        <div class="pricing-card popular">
-            <h3>Forfait Standard</h3>
-            <p class="price">39€ <span>/mois</span></p>
-            <ul class="features">
-                <li>Accès à 50 jeux</li>
-                <li>Support technique prioritaire</li>
-                <li>Mises à jour hebdomadaires</li>
-                <li>Contenu exclusif</li>
-            </ul>
-            <button class="cta-button">Choisir ce forfait</button>
-        </div>
+                        <label for="date">Date :</label>
+                        <input type="date" id="date" required>
 
-        <!-- Forfait premium -->
-        <div class="pricing-card">
-            <h3>Forfait Premium</h3>
-            <p class="price">69€ <span>/mois</span></p>
-            <ul class="features">
-                <li>Accès illimité à tous les jeux</li>
-                <li>Support technique 24/7</li>
-                <li>Mises à jour quotidiennes</li>
-                <li>Contenu exclusif et bonus</li>
-            </ul>
-            <button class="cta-button">Choisir ce forfait</button>
+                        <label for="time">Horaire :</label>
+                        <select id="time" required>
+                        <option value="10:00">10:00 - 11:00</option>
+                        <option value="11:00">11:00 - 12:00</option>
+                        <option value="13:00">13:00 - 14:00</option>
+                        <option value="14:00">14:00 - 15:00</option>
+                        <option value="15:00">15:00 - 16:00</option>
+                        </select>
+
+                        <button type="submit">Réserver</button>
+                    </form>
+            </div>
         </div>
-    </div>
-</section>
-    
+    </section>
+    <section class="pricing-section">
+        <h2>Nos Tarifs</h2>
+        <p class="pricing-description">Découvrez nos offres adaptées à vos besoins. Choisissez le forfait qui vous convient le mieux.</p>
+        <div class="pricing-container">
+            <!-- Forfait de base -->
+            <div class="pricing-card">
+                <h3>Forfait Découverte</h3>
+                <p class="price">19€ <span>/mois</span></p>
+                <ul class="features">
+                    <li>Accès à 10 jeux</li>
+                    <li>Support technique de base</li>
+                    <li>Mises à jour mensuelles</li>
+                </ul>
+                <button class="cta-button">Choisir ce forfait</button>
+            </div>
+            <!-- Forfait standard -->
+            <div class="pricing-card popular">
+                <h3>Forfait Standard</h3>
+                <p class="price">39€ <span>/mois</span></p>
+                <ul class="features">
+                    <li>Accès à 50 jeux</li>
+                    <li>Support technique prioritaire</li>
+                    <li>Mises à jour hebdomadaires</li>
+                    <li>Contenu exclusif</li>
+                </ul>
+                <button class="cta-button">Choisir ce forfait</button>
+            </div>
+
+            <!-- Forfait premium -->
+            <div class="pricing-card">
+                <h3>Forfait Premium</h3>
+                <p class="price">69€ <span>/mois</span></p>
+                <ul class="features">
+                    <li>Accès illimité à tous les jeux</li>
+                    <li>Support technique 24/7</li>
+                    <li>Mises à jour quotidiennes</li>
+                    <li>Contenu exclusif et bonus</li>
+                </ul>
+                <button class="cta-button">Choisir ce forfait</button>
+            </div>
+        </div>
+    </section>    
 <!-------------------------- section footer -------------------------->
-    <footer>
-        <div class="logofooter">
-            <a href="index.html"><img src="assets/Img/LogoManettePlus-svg.svg" alt="Logo"></a>
-        </div>
-        
-        <div class="footeer">
+<footer>
+    <div class="logofooter">
+        <a href="index.html"><img src="assets/Img/LogoManettePlus-svg.svg" alt="Logo"></a>
+    </div>
+    <div class="footeer">
         <p class="adress">
             GameOn VR Center
             123 Avenue du futur 
             75001 Paris, France
         </p>
-        <nav class="social-links">
-            <ul>
-                <li><a href="#"><img src="assets/Icone/instagram.png" alt="Instagram"></a></li>
-                <li><a href="#"><img src="assets/Icone/facebook.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="assets/Icone/tic-tac.png" alt="TikTok"></a></li>
-                <li><a href="#"><img src="assets/Icone/youtube.png" alt="YouTube"></a></li>
-            </ul>
-        </nav>
+    <nav class="social-links">
+        <ul>
+            <li><a href="#"><img src="assets/Icone/instagram.png" alt="Instagram"></a></li>
+            <li><a href="#"><img src="assets/Icone/facebook.png" alt="Facebook"></a></li>
+            <li><a href="#"><img src="assets/Icone/tic-tac.png" alt="TikTok"></a></li>
+            <li><a href="#"><img src="assets/Icone/youtube.png" alt="YouTube"></a></li>
+        </ul>
+    </nav>
     </div>
+<!-------------------- RGPD -------------------->
     <div class="mention">
-        <a href="politique-confidentialite.html" class="legal-link"><p>Mentions légales, politique de confidentialité</p></a>
+        <p>
+            <a href="mentions-legales.html" class="legal-link">Mentions légales</a><br>
+            <a href="politique-confidentialite.html" class="legal-link">Politique de confidentialité</a>
+        </p>
         <p>
             2024 GameOn. Tous droit réservés
         </p>
     </div>
-    </footer>
-    <!-- Bannière de consentement pour les cookies -->
+</footer>
+<!-- Bannière de consentement pour les cookies -->
     <div id="cookie-banner">
         <p>
             Nous utilisons des cookies pour améliorer votre expérience utilisateur. En continuant à utiliser ce site, vous acceptez notre <a href="politique-confidentialite.html" style="color: #00aaff; text-decoration: underline;">politique de confidentialité</a>.
         </p>
         <div>
-        <button id="accept-cookies">Accepter</button>
-        <button id="decline-cookies">Refuser</button>
+            <button id="accept-cookies">Accepter</button>
+            <button id="decline-cookies">Refuser</button>
         </div>
-    </div>   
+    </div> 
 </body>
 </html>

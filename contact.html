@@ -9,7 +9,7 @@
     <title>GameOn</title>
 </head>
 <body>
-    <!-----------------------_ section header ------------------------>
+<!----------------------- section header ------------------------>
     <header>
         <a href="index.html"><img src="assets/Img/LogoManettePlus-svg.svg" alt="Logo"></a>
         <div class="menu-toggle" id="menu-toggle">
@@ -27,95 +27,100 @@
         </nav>
         <a href="reservation.html" class="reservation-btn">Réservez</a>
     </header>
-    <section class="headContact">
-        <h1>Contactez-nous</h1>
-        <p style="text-align:center;">Une question ? Nous sommes là pour vous répondre !</p>
-    
-        <div class="formcontainer no-center">
-        <form action="#" method="post">
-          <label for="name">Nom complet</label>
-          <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
-
-          <label for="email">Adresse e-mail</label>
-          <input type="email" id="email" name="email" placeholder="Votre adresse e-mail" required>
-    
-          <label for="subject">Sujet</label>
-          <select id="subject" name="subject" required>
-            <option value="">-- Choisissez un sujet --</option>
-            <option value="general">Informations générales</option>
-            <option value="reservation">Réservations</option>
-            <option value="partnership">Partenariats</option>
-          </select>
-    
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
-    
-          <button type="submit">Envoyer</button>
-        </form>
-      </div>
-      <h2> Comment nous trouver</h2>
-      <div class="adresseContact">
-        <div class="contact-info">
-                <h2>Informations de contact</h2>
-                <p>📍 Adresse : 123 Rue des Gamers, 75000 Paris</p>
-                <p>📞 Téléphone : <a href="tel:+33123456789">01 23 45 67 89</a></p>
-                <p>📧 E-mail : <a href="mailto:contact@gameon.fr">contact@gameon.fr</a></p>
-                <p>🕒 Horaires : Lundi - Samedi, 10h00 - 22h00</p>
-        </div>
-        <div class="map-container">   
-                <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337124522353!2d2.3522215156732416!3d48.85661407928767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671d8778d8ad5%3A0x2b8156b66e3b26c0!2sTour%20Eiffel%2C%2075007%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1697145691448!5m2!1sen!2sfr" 
-                width="100%" 
-                height="400" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-        </div>
-      </div>
-    </section>
-    <section class="CtaSection">
-        <h2>Prêt à plonger dans l'aventure ?</h2>
-        <p>Réservez votre session VR dès maintenant et vivez une expérience inédite.</p>
-        <a href="reservation.html" class="btn_order">Réservez</a>
-    </section>
-<!-------------------------- section footer -------------------------->
-    <footer>
-        <div class="logofooter">
-            <a href="index.html"><img src="assets/Img/LogoManettePlus-svg.svg" alt="Logo"></a>
-        </div>
+<!-------------------- Section Formulaire  ------------------------>
+        <section class="headContact">
+            <h1>Contactez-nous</h1>
+            <p style="text-align:center;">Une question ? Nous sommes là pour vous répondre !</p>
         
-        <div class="footeer">
+            <div class="formcontainer no-center">
+                <form action="#" method="post">
+                <label for="name">Nom complet</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
+
+                <label for="email">Adresse e-mail</label>
+                <input type="email" id="email" name="email" placeholder="Votre adresse e-mail" required>
+            
+                <label for="subject">Sujet</label>
+                <select id="subject" name="subject" required>
+                    <option value="">-- Choisissez un sujet --</option>
+                    <option value="general">Informations générales</option>
+                    <option value="reservation">Réservations</option>
+                    <option value="partnership">Partenariats</option>
+                </select>
+            
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+            
+                <button type="submit">Envoyer</button>
+                </form>
+            </div>
+                <h2> Comment nous trouver</h2>
+            <div class="adresseContact">
+                <div class="contact-info">
+                        <h2>Informations de contact</h2>
+                        <p>📍 Adresse : 123 Rue des Gamers, 75000 Paris</p>
+                        <p>📞 Téléphone : <a href="tel:+33123456789">01 23 45 67 89</a></p>
+                        <p>📧 E-mail : <a href="mailto:contact@gameon.fr">contact@gameon.fr</a></p>
+                        <p>🕒 Horaires : Lundi - Samedi, 10h00 - 22h00</p>
+                </div>
+                <div class="map-container">   
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337124522353!2d2.3522215156732416!3d48.85661407928767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671d8778d8ad5%3A0x2b8156b66e3b26c0!2sTour%20Eiffel%2C%2075007%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1697145691448!5m2!1sen!2sfr" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                </div>
+            </div>
+        </section>
+<!---------------------- Section Cta -------------------------->
+        <section class="CtaSection">
+            <h2>Prêt à plonger dans l'aventure ?</h2>
+            <p>Réservez votre session VR dès maintenant et vivez une expérience inédite.</p>
+            <a href="reservation.html" class="btn_order">Réservez</a>
+        </section>
+<!-------------------------- section footer -------------------------->
+<footer>
+    <div class="logofooter">
+        <a href="index.html"><img src="assets/Img/LogoManettePlus-svg.svg" alt="Logo"></a>
+    </div>
+    <div class="footeer">
         <p class="adress">
             GameOn VR Center
             123 Avenue du futur 
             75001 Paris, France
         </p>
-        <nav class="social-links">
-            <ul>
-                <li><a href="#"><img src="assets/Icone/instagram.png" alt="Instagram"></a></li>
-                <li><a href="#"><img src="assets/Icone/facebook.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="assets/Icone/tic-tac.png" alt="TikTok"></a></li>
-                <li><a href="#"><img src="assets/Icone/youtube.png" alt="YouTube"></a></li>
-            </ul>
-        </nav>
-    </div>
+    <nav class="social-links">
+        <ul>
+            <li><a href="#"><img src="assets/Icone/instagram.png" alt="Instagram"></a></li>
+            <li><a href="#"><img src="assets/Icone/facebook.png" alt="Facebook"></a></li>
+            <li><a href="#"><img src="assets/Icone/tic-tac.png" alt="TikTok"></a></li>
+            <li><a href="#"><img src="assets/Icone/youtube.png" alt="YouTube"></a></li>
+        </ul>
+    </nav>
+</div>
+<!-------------------- RGPD -------------------->
     <div class="mention">
-        <a href="politique-confidentialite.html" class="legal-link"><p>Mentions légales, politique de confidentialité</p></a>
+        <p>
+            <a href="mentions-legales.html" class="legal-link">Mentions légales</a><br>
+            <a href="politique-confidentialite.html" class="legal-link">Politique de confidentialité</a>
+        </p>
         <p>
             2024 GameOn. Tous droit réservés
         </p>
     </div>
-    </footer> 
-    <!-- Bannière de consentement pour les cookies -->
+</footer>
+<!-- Bannière de consentement pour les cookies -->
     <div id="cookie-banner">
         <p>
             Nous utilisons des cookies pour améliorer votre expérience utilisateur. En continuant à utiliser ce site, vous acceptez notre <a href="politique-confidentialite.html" style="color: #00aaff; text-decoration: underline;">politique de confidentialité</a>.
         </p>
         <div>
-        <button id="accept-cookies">Accepter</button>
-        <button id="decline-cookies">Refuser</button>
+            <button id="accept-cookies">Accepter</button>
+            <button id="decline-cookies">Refuser</button>
         </div>
     </div>   
 </body>
