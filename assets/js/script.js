@@ -1,5 +1,5 @@
-/******************* Menu Burger *******************/
 
+/************************* Gestion faq ***************************/
 // Gestion des clics pour afficher/masquer les réponses
 document.querySelectorAll('.faq li').forEach(item => {
     item.addEventListener('click', () => {
@@ -7,11 +7,17 @@ document.querySelectorAll('.faq li').forEach(item => {
         item.classList.toggle('active');
     });
 });
+/******************* Menu Burger *******************/
 const menuToggle = document.getElementById('menu-toggle');
 const header = document.querySelector('header');
+const body = document.body;
 
 menuToggle.addEventListener('click', () => {
+    // Ouvrir ou fermer le menu burger
     header.classList.toggle('menu-open');
+    
+    // Bloquer ou autoriser le scroll en fonction du menu ouvert
+    body.classList.toggle('no-scroll', header.classList.contains('menu-open'));
 });
 
 /********************* Fonctionalité AJAX **************************/
@@ -132,62 +138,62 @@ const endpoint = `https://api.rawg.io/api/games?tags=vr&key=${apiKey}`;
       fetchGames();
     });
     
-/********************** Gestion Carousel************************/
+/********************** Gestion Carousel ************************/
 
-const track = document.querySelector('.carousel-track');
-if(track){
-  const images = Array.from(track.children);
-const nextButton = document.querySelector('.carousel-button.next');
-const prevButton = document.querySelector('.carousel-button.prev');
+      const track = document.querySelector('.carousel-track');
+      if(track){
+      const images = Array.from(track.children);
+      const nextButton = document.querySelector('.carousel-button.next');
+      const prevButton = document.querySelector('.carousel-button.prev');
 
-let currentIndex = 0;
+      let currentIndex = 0;
 
-function updateCarousel(index) {
-  const imageWidth = images[0].getBoundingClientRect().width;
-  track.style.transform = `translateX(-${index * imageWidth}px)`;
-}
+      function updateCarousel(index) {
+        const imageWidth = images[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${index * imageWidth}px)`;
+      }
 
-nextButton.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateCarousel(currentIndex);
-});
+      nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel(currentIndex);
+      });
 
-prevButton.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateCarousel(currentIndex);
-});
-}
+      prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateCarousel(currentIndex);
+      });
+      }
  
 /***************************Gestion des cookies****************************/
 
-// Vérifie si le consentement a déjà été donné
-if (document.cookie.includes('cookies-accepted=true') || document.cookie.includes('cookies-accepted=false')) {
+  // Vérifie si le consentement a déjà été donné
+  if (document.cookie.includes('cookies-accepted=true') || document.cookie.includes('cookies-accepted=false')) {
+      document.getElementById('cookie-banner').style.display = 'none';
+  }
+                
+  // Fonction pour gérer l'acceptation des cookies
+    document.getElementById('accept-cookies').addEventListener('click', function () {
+    document.cookie = "cookies-accepted=true; path=/; max-age=" + 60 * 60 * 24 * 365; // 1 an
     document.getElementById('cookie-banner').style.display = 'none';
-}
-              
-// Fonction pour gérer l'acceptation des cookies
-  document.getElementById('accept-cookies').addEventListener('click', function () {
-  document.cookie = "cookies-accepted=true; path=/; max-age=" + 60 * 60 * 24 * 365; // 1 an
-  document.getElementById('cookie-banner').style.display = 'none';
-  alert('Merci d’avoir accepté les cookies !');
-});
-              
-// Fonction pour refuser les cookies
-  document.getElementById('decline-cookies').addEventListener('click', function () {
-  document.cookie = "cookies-accepted=false; path=/; max-age=" + 60 * 60 * 24 * 365; // 1 an
-  document.getElementById('cookie-banner').style.display = 'none';
-  alert('Vous avez refusé les cookies.');
-});
-if (document.cookie.includes('cookies-accepted=true')) {
-// Charger Google Analytics ou tout autre script
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    alert('Merci d’avoir accepté les cookies !');
+  });
+                
+  // Fonction pour refuser les cookies
+    document.getElementById('decline-cookies').addEventListener('click', function () {
+    document.cookie = "cookies-accepted=false; path=/; max-age=" + 60 * 60 * 24 * 365; // 1 an
+    document.getElementById('cookie-banner').style.display = 'none';
+    alert('Vous avez refusé les cookies.');
+  });
+  if (document.cookie.includes('cookies-accepted=true')) {
+  // Charger Google Analytics ou tout autre script
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-XXXXXXXXX-X', 'auto');
-ga('send', 'pageview');
-}
+  ga('create', 'UA-XXXXXXXXX-X', 'auto');
+  ga('send', 'pageview');
+  }
 
 
 
