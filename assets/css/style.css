@@ -132,9 +132,15 @@ body.no-scroll {
     width: 60px;
 }
 
-header img {
+header img, footer img {
     width: 150px;
-  }
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+header img:hover, footer img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px var(--white-color));
+}
 
 header {
     display: flex;
@@ -145,6 +151,7 @@ header {
     color: var(--white-color);
     border-bottom: var(--white-color) solid 1px;  
 }
+
 
 .navheader ul li a {
     color: var(--white-color);
@@ -157,23 +164,36 @@ nav ul li a {
     display: inline-block;
     transition: transform 0.3s ease-in-out;
 }
+/* Animation_nav */
+.navheader ul li a {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease 0.1s;
+}
 
-nav ul li a:hover {
+.navheader ul li a:hover {
     transform: scale(1.2);
 }
 
-a.reservation-btn {
+ a.reservation-btn {
     display: inline-block;
     font-family: "Rajdhani";
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     background-color: var(--primary-color);
-    padding: 6px 15px;
+    padding: 8px 15px;
     border-radius: 15px;
     color: var(--black-color);
     display: none;
     width: 100px;
     text-align: center;
-    margin: 1.5em;     
+    margin: 1.5em; 
+    transition: background-color 0.3s ease, transform 0.3s ease;    
+} 
+
+.reservation-btn:hover {
+    color: var(--white-color);
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
 }
 
   /************ Section hero **************/
@@ -201,6 +221,7 @@ a.reservation-btn {
 .btn_order:hover {
     background-color: var(--secondary-color);
     color: var(--white-color); 
+    transform: scale(1.05);
 }
 
 .listeExp {
@@ -219,6 +240,15 @@ a.reservation-btn {
     text-align: center;
     max-width: 380px;
     margin: auto;
+}
+
+.listeExp li {
+    border: 1px solid var(--soft-white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.listeExp li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgb(254, 254, 254);
 }
 
 .exp1{
@@ -276,8 +306,13 @@ a.reservation-btn {
     font-size: 1.4rem;
     padding: 0.5em;
     border-radius: 15px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     margin: 1.5em;
+}
+/* AnimationAbout */
+.decouvrir-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(5px);
 }
 
 /************ section whyUs **************/
@@ -578,6 +613,10 @@ footer .social-links li img:hover {
     .navheader ul {
         display: flex;
         gap: 100px;
+    }
+
+    .whyUs_sec{
+        height: 600px;
     }
 
     .Comment_sec ul,.WhyUs_ul{
@@ -1203,14 +1242,5 @@ header.menu-open .menu-toggle div:nth-child(3) {
   
 #cookie-banner button#decline-cookies {
     background-color: #f44336;
-  } 
-
-
-  
-
-  
-  
-  
-  
-  
+  }
 

@@ -3,58 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Mentions Légales</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-    </style> 
 </head>
 <body>
+    <style>
+        section{
+        padding: 0;
+    }
+    p{
+        max-width: 100%;
+        padding: 0px 42px;
+    }
+    h1{
+        width: 100%;
+    }
+    h2{
+        padding: 42px 0 10px;
+    }
+   
+    h1, h2 {
+        color: black;
+    }
+    a {
+        color: #3498db;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+    <header>
+        <a href="index.html"><img src="assets/Img/LogoManettePlus-svg.svg" alt="Logo"></a>
+        <div class="menu-toggle" id="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="navheader">
+            <ul>
+                <li><a href="a_propos.html">À propos</a></li>
+                <li><a href="experience.html">Expériences</a></li>
+                <li><a href="reservation.html">Réservation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="reservation.html" class="reservation-btn">Réservez</a>
+    </header>
     <div class="container">
         <h1>Mentions Légales</h1>
-        <p><em>Dernière mise à jour : [Date]</em></p>
+        <p><em>Dernière mise à jour : 15/02/2025</em></p>
 
         <h2>1. Éditeur du site</h2>
-        <p><strong>[Nom du site]</strong> est édité par :</p>
-        <ul>
-            <li><strong>Raison sociale</strong> : [Nom de l'entreprise ou de l'individu]</li>
-            <li><strong>Adresse</strong> : [Adresse complète]</li>
-            <li><strong>Téléphone</strong> : [Numéro de téléphone]</li>
-            <li><strong>E-mail</strong> : <a href="mailto:contact@votresite.com">contact@votresite.com</a></li>
-            <li><strong>Directeur de la publication</strong> : [Nom du responsable]</li>
-        </ul>
+        <p><strong>GameOn</strong> est édité par : <br>
+        
+            <strong>Raison sociale</strong> : GameOn <br>
+            <strong>Adresse</strong> : Avenue du futur 75001 strasbourg <br>
+            <strong>Téléphone</strong> : [Numéro de téléphone] <br>
+            <strong>E-mail</strong> : <a href="mailto:contact@votresite.com">contact@votresite.com</a> <br>
+            <strong>Directeur de la publication</strong> : Ario
+        </p>
+
 
         <h2>2. Hébergement</h2>
-        <p>Ce site est hébergé par :</p>
-        <ul>
-            <li><strong>Nom de l'hébergeur</strong> : [Nom de l'hébergeur, ex: OVH]</li>
-            <li><strong>Adresse</strong> : [Adresse de l'hébergeur]</li>
-            <li><strong>Téléphone</strong> : [Numéro de téléphone de l'hébergeur]</li>
-        </ul>
+        <p>Ce site est hébergé par : <br>
+            <strong>Nom de l'hébergeur</strong> : OVH <br>
+            <strong>Adresse</strong> : [Adresse de l'hébergeur] <br>
+            <strong>Téléphone</strong> : [Numéro de téléphone de l'hébergeur]
+        </p>
 
         <h2>3. Propriété intellectuelle</h2>
         <p>Le contenu de ce site (textes, images, logos, etc.) est protégé par les lois sur la propriété intellectuelle. Toute reproduction ou utilisation sans autorisation est interdite.</p>
@@ -71,5 +95,35 @@
         <h2>7. Contact</h2>
         <p>Pour toute question concernant ces mentions légales, contactez-nous à l'adresse suivante : <a href="mailto:contact@votresite.com">contact@votresite.com</a>.</p>
     </div>
+    <footer>
+        <div class="logofooter">
+            <a href="index.html"><img src="assets/Img/LogoManettePlus-svg.svg" alt="Logo"></a>
+        </div>
+        <div class="footeer">
+            <p class="adress">
+                GameOn VR Center
+                123 Avenue du futur 
+                75001 Paris, France
+            </p>
+        <nav class="social-links">
+            <ul>
+                <li><a target="_blank" href="https://www.instagram.com/"><img src="assets/Icone/instagram.png" alt="Instagram"></a></li>
+                <li><a target="_blank" href="https://www.facebook.com/"><img src="assets/Icone/facebook.png" alt="Facebook"></a></li>
+                <li><a target="_blank" href="https://www.tiktok.com/"><img src="assets/Icone/tic-tac.png" alt="TikTok"></a></li>
+                <li><a target="_blank" href="https://www.youtube.com/"><img src="assets/Icone/youtube.png" alt="YouTube"></a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-------------------- RGPD -------------------->
+    <div class="mention">
+        <p>
+            <a href="mentions-legales.html" class="legal-link">Mentions légales</a><br>
+            <a href="politique-confidentialite.html" class="legal-link">Politique de confidentialité</a>
+        </p>
+        <p>
+            2024 GameOn. Tous droit réservés
+        </p>
+    </div>
+    </footer>
 </body>
 </html>

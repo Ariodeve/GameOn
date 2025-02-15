@@ -11,7 +11,6 @@ document.querySelectorAll('.faq li').forEach(item => {
 const menuToggle = document.getElementById('menu-toggle');
 const header = document.querySelector('header');
 const body = document.body;
-
 menuToggle.addEventListener('click', () => {
     // Ouvrir ou fermer le menu burger
     header.classList.toggle('menu-open');
@@ -19,11 +18,8 @@ menuToggle.addEventListener('click', () => {
     // Bloquer ou autoriser le scroll en fonction du menu ouvert
     body.classList.toggle('no-scroll', header.classList.contains('menu-open'));
 });
-
 /********************* Fonctionalité AJAX **************************/
-
 // Fonction pour récupérer et afficher les expériences
-
 function fetchExperiences() {
   fetch("assets/json/db.json")
     .then(response => {
@@ -53,18 +49,12 @@ function fetchExperiences() {
       console.error("Erreur :", error);
     });
 }
-
 // Charger les expériences au chargement de la page
-
 fetchExperiences();
-
 /******************** Appel à une API *************************/
-
 const apiKey = '170d7fee5ec142c396b55b76f825a417'; 
 const endpoint = `https://api.rawg.io/api/games?tags=vr&key=${apiKey}`;
-
     // Fonction pour récupérer les jeux et les afficher
-
     async function fetchGames() {
       try {
         const response = await fetch(endpoint);
@@ -77,9 +67,7 @@ const endpoint = `https://api.rawg.io/api/games?tags=vr&key=${apiKey}`;
         console.error('Erreur :', error);
       }
     }
-
     // Afficher les jeux dans la section "games-container"
-
     function displayGames(games) {
       const gamesContainer = document.getElementById('games');
       if(gamesContainer){
@@ -93,32 +81,24 @@ const endpoint = `https://api.rawg.io/api/games?tags=vr&key=${apiKey}`;
           <p><strong>Note :</strong> ${game.rating} / 5</p>
         `;
         gamesContainer.appendChild(gameDiv);
-
         // Rendre chaque carte cliquable
-
         gameDiv.addEventListener('click', () => openReservationModal(game.name));
       });
       }   
     }
-
     // Ouvrir le modal avec le jeu sélectionné
-
     function openReservationModal(gameName) {
       document.getElementById('selectedGame').value = gameName;
       document.getElementById('reservationModal').style.display = 'flex';
-    }
-    
+    }  
     // Fermer le modal
-
     let closemodal = document.getElementById('closeModal')
     if(closemodal){
       closemodal.addEventListener('click', () => {
       document.getElementById('reservationModal').style.display = 'none';
     });
     }
-
     // Gestionnaire de soumission du formulaire
-
     const reservationForm = document.getElementById('reservationForm');
     if(reservationForm){
       
@@ -131,15 +111,11 @@ const endpoint = `https://api.rawg.io/api/games?tags=vr&key=${apiKey}`;
       document.getElementById('reservationModal').style.display = 'none';
     });
     }
-
     // Appel initial
-
     document.addEventListener('DOMContentLoaded', () => {
       fetchGames();
     });
-    
 /********************** Gestion Carousel ************************/
-
       const track = document.querySelector('.carousel-track');
       if(track){
       const images = Array.from(track.children);
@@ -163,21 +139,17 @@ const endpoint = `https://api.rawg.io/api/games?tags=vr&key=${apiKey}`;
         updateCarousel(currentIndex);
       });
       }
- 
 /***************************Gestion des cookies****************************/
-
   // Vérifie si le consentement a déjà été donné
   if (document.cookie.includes('cookies-accepted=true') || document.cookie.includes('cookies-accepted=false')) {
       document.getElementById('cookie-banner').style.display = 'none';
-  }
-                
+  }             
   // Fonction pour gérer l'acceptation des cookies
     document.getElementById('accept-cookies').addEventListener('click', function () {
     document.cookie = "cookies-accepted=true; path=/; max-age=" + 60 * 60 * 24 * 365; // 1 an
     document.getElementById('cookie-banner').style.display = 'none';
     alert('Merci d’avoir accepté les cookies !');
-  });
-                
+  });           
   // Fonction pour refuser les cookies
     document.getElementById('decline-cookies').addEventListener('click', function () {
     document.cookie = "cookies-accepted=false; path=/; max-age=" + 60 * 60 * 24 * 365; // 1 an
@@ -194,13 +166,4 @@ const endpoint = `https://api.rawg.io/api/games?tags=vr&key=${apiKey}`;
   ga('create', 'UA-XXXXXXXXX-X', 'auto');
   ga('send', 'pageview');
   }
-
-
-
-
-
-
-
-
-
 
