@@ -506,6 +506,9 @@ footer .social-links li img:hover {
         padding: 0.8em;
         width: 110px
     }
+    .listeExp p{
+        height: 100px;
+    }
 
     .Comment_sec ul,.WhyUs_ul{
         display: flex;
