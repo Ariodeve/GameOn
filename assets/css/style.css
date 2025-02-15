@@ -199,7 +199,7 @@ nav ul li a {
   /************ Section hero **************/
 
 .herosec {
-    background: url('../Img/hero_home.jpg') no-repeat center center/cover; 
+    background: url('../Img/hero_home.webp') no-repeat center center/cover; 
     color: var(--white-color);
     padding: 2rem 1rem;
     min-height: 100vh;
@@ -697,7 +697,7 @@ footer .social-links li img:hover {
 /* Section hero */
 
 .heroPage2{
-    background: url('../Img/heroPage2.jpg') no-repeat center center/cover; 
+    background: url('../Img/heroPage2.webp') no-repeat center center/cover; 
     padding: 2rem 1rem;
     border-bottom: var(--white-color) solid 1px;
 }
